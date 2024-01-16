@@ -41,10 +41,26 @@ struct RegistrationView: View {
                           placeholder: "Enter your password",
                           isSecuredField: true)
 
-                InputView(text: $confirmPassword,
-                          title: "Confirm password",
-                          placeholder: "Confirm your password",
-                          isSecuredField: true)
+                ZStack(alignment: .trailing) {
+                    InputView(text: $confirmPassword,
+                              title: "Confirm password",
+                              placeholder: "Confirm your password",
+                              isSecuredField: true)
+                    if password.count > 5,
+                       confirmPassword.count > 5 {
+                        if password == confirmPassword {
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                        } else {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemRed))
+                        }
+                    }
+                }
             }
             .padding(.horizontal)
             .padding(.top, 12)
@@ -67,7 +83,8 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32,
                        height: 48)
             }
-            .background(Color(.systemBlue))
+            .opacity(formIsValid ? 1.0 : 0.5)
+            .background(Color(.systemBlue).opacity(formIsValid ? 1.0 : 0.5))
             .cornerRadius(10)
             .padding(.top, 24)
 
@@ -87,6 +104,21 @@ struct RegistrationView: View {
         }
     }
 }
+
+// MARK: - AuthenticationFormProtocol
+
+extension RegistrationView: AuthenticationFormProtocol {
+
+    var formIsValid: Bool {
+        !email.isEmpty
+        && email.contains("@")
+        && !fullName.isEmpty
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
+    }
+}
+
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
