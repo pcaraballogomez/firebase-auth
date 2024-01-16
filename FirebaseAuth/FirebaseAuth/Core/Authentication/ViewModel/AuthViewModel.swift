@@ -16,6 +16,10 @@ class AuthViewModel: ObservableObject {
 
     init() {
         userSession = Auth.auth().currentUser
+
+        Task {
+            await fetchUser()
+        }
     }
 
     func signIn(withEmail email: String,
@@ -33,6 +37,7 @@ class AuthViewModel: ObservableObject {
             let user = User(id: result.user.uid, fullName: fullName, email: email)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+            await fetchUser()
         } catch {
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
         }
@@ -47,6 +52,11 @@ class AuthViewModel: ObservableObject {
     }
 
     func fetchUser() async {
-        
+        guard let uid = Auth.auth().currentUser?.uid,
+              let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {
+            return
+        }
+        currentUser = try? snapshot.data(as: User.self)
+        print("DEBUG: Current user is \(String(describing: currentUser))")
     }
 }
