@@ -63,7 +63,9 @@ struct ProfileView: View {
                     }
 
                     Button {
-                        viewModel.deleteAccount()
+                        Task {
+                            await viewModel.deleteAccount()
+                        }
                     } label: {
                         SettingsRowView(systemImageName: "xmark.circle.fill",
                                         title: "Delete account",
