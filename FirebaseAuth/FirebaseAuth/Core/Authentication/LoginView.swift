@@ -33,7 +33,6 @@ struct LoginView: View {
                               title: "Password",
                               placeholder: "Enter your password",
                               isSecuredField: true)
-                    .autocapitalization(.none)
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
@@ -59,7 +58,8 @@ struct LoginView: View {
 
                 // Sign up button
                 NavigationLink {
-
+                    RegistrationView()
+                        //.navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3) {
                         Text("Don't have an account")
