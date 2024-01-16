@@ -32,7 +32,7 @@
 		F25D64C32B565AA7004D7F63 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F25D64C52B565FBF004D7F63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F25D64D22B56A88F004D7F63 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		F27E14FD2B5507DC00826709 /* FirebaseAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F27E14FD2B5507DC00826709 /* FirebaseAuth-foo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FirebaseAuth-foo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27E15002B5507DC00826709 /* FirebaseAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthApp.swift; sourceTree = "<group>"; };
 		F27E15022B5507DC00826709 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F27E15042B5507DE00826709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		F27E14FE2B5507DC00826709 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F27E14FD2B5507DC00826709 /* FirebaseAuth.app */,
+				F27E14FD2B5507DC00826709 /* FirebaseAuth-foo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F27E14FC2B5507DC00826709 /* FirebaseAuth */ = {
+		F27E14FC2B5507DC00826709 /* FirebaseAuth-foo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F27E150B2B5507DE00826709 /* Build configuration list for PBXNativeTarget "FirebaseAuth" */;
+			buildConfigurationList = F27E150B2B5507DE00826709 /* Build configuration list for PBXNativeTarget "FirebaseAuth-foo" */;
 			buildPhases = (
 				F27E14F92B5507DC00826709 /* Sources */,
 				F27E14FA2B5507DC00826709 /* Frameworks */,
@@ -186,7 +186,7 @@
 			);
 			dependencies = (
 			);
-			name = FirebaseAuth;
+			name = "FirebaseAuth-foo";
 			packageProductDependencies = (
 				F25D64C82B5665E7004D7F63 /* FirebaseAuth */,
 				F25D64CA2B5665E7004D7F63 /* FirebaseFirestore */,
@@ -194,7 +194,7 @@
 				F25D64CE2B5665E7004D7F63 /* FirebaseStorage */,
 			);
 			productName = FirebaseAuth;
-			productReference = F27E14FD2B5507DC00826709 /* FirebaseAuth.app */;
+			productReference = F27E14FD2B5507DC00826709 /* FirebaseAuth-foo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F27E14FC2B5507DC00826709 /* FirebaseAuth */,
+				F27E14FC2B5507DC00826709 /* FirebaseAuth-foo */,
 			);
 		};
 /* End PBXProject section */
@@ -450,7 +450,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F27E150B2B5507DE00826709 /* Build configuration list for PBXNativeTarget "FirebaseAuth" */ = {
+		F27E150B2B5507DE00826709 /* Build configuration list for PBXNativeTarget "FirebaseAuth-foo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F27E150C2B5507DE00826709 /* Debug */,
