@@ -9,76 +9,112 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var showErrorAlert = false
+    @State private var errorMessage = ""
+
+    private struct VisualConstants {
+        static let spacing = 4.0
+    }
 
     var body: some View {
         if let user = viewModel.currentUser {
             List {
-                Section {
-                    HStack {
-                        if let initials = user.initials {
-                            Text(initials)
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .frame(width: 72, height: 72)
-                                .background(Color(.systemGray3))
-                                .clipShape(Circle())
-                        }
-
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(user.fullName)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .padding(.top, 4)
-
-                            Text(user.email)
-                                .font(.footnote)
-                                .foregroundColor(.gray)
-    //                            .accentColor(.gray)
-                        }
-                    }
+                userInfoSection(user)
+                if let version = Bundle.main.releaseVersionNumber {
+                    generalSettingsSection(version)
                 }
+                accountActionsSection()
+            }
+            .errorAlert(isPresented: $showErrorAlert,
+                        errorMessage: errorMessage)
+        } else {
+            Text(Resources.Strings.Profile.noUserLogged)
+                .font(.headline)
+                .foregroundColor(.gray)
+        }
+    }
 
-                Section("General") {
-                    HStack {
-                        SettingsRowView(systemImageName: "gear",
-                                        title: "Version",
-                                        tintColor: Color(.systemGray))
+    // MARK: - User info section
+    @ViewBuilder
+    private func userInfoSection(_ user: User) -> some View {
+        Section {
+            HStack {
+                UserAvatar(initials: user.initials)
 
-                        Spacer()
+                VStack(alignment: .leading, spacing: VisualConstants.spacing) {
+                    Text(user.fullName)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .padding(.top, VisualConstants.spacing)
 
-                        Text("1.0.0")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                }
-
-                Section("Account") {
-                    Button {
-                        viewModel.signOut()
-                    } label: {
-                        SettingsRowView(systemImageName: "arrow.left.circle.fill",
-                                        title: "Sign Out",
-                                        tintColor: .red)
-                    }
-
-                    Button {
-                        Task {
-                            await viewModel.deleteAccount()
-                        }
-                    } label: {
-                        SettingsRowView(systemImageName: "xmark.circle.fill",
-                                        title: "Delete account",
-                                        tintColor: .red)
-                    }
+                    Text(user.email)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
                 }
             }
         }
     }
+
+    // MARK: - General settings section
+    @ViewBuilder
+    private func generalSettingsSection(_ version: String) -> some View {
+        Section(Resources.Strings.Profile.general) {
+            HStack {
+                SettingsRowView(imageSystemName: .gear,
+                                title: Resources.Strings.Profile.version,
+                                tintColor: Color(.systemGray))
+                Spacer()
+                Text(version)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+        }
+    }
+
+    // MARK: - Account actions section
+    @ViewBuilder
+    private func accountActionsSection() -> some View {
+        Section(Resources.Strings.Profile.account) {
+            Button {
+                do {
+                    try viewModel.signOut()
+                } catch {
+                    showError(withMessage: Resources.Strings.Account.unavailableSigningOut +
+                              Resources.Strings.Common.tryAgainLater)
+                }
+            } label: {
+                SettingsRowView(imageSystemName: .arrowLeftCircleFill,
+                                title: Resources.Strings.Profile.signOut,
+                                tintColor: .red)
+            }
+
+            Button {
+                Task {
+                    do {
+                        try await viewModel.deleteAccount()
+                    } catch {
+                        showError(withMessage: Resources.Strings.Account.unavailableAccountDeletion +
+                                  Resources.Strings.Common.tryAgainLater)
+                    }
+                }
+            } label: {
+                SettingsRowView(imageSystemName: .xMarkCircleFill,
+                                title: Resources.Strings.Profile.deleteAccount,
+                                tintColor: .red)
+            }
+        }
+    }
+
+    private func showError(withMessage message: String) {
+        errorMessage = message
+        showErrorAlert = true
+    }
 }
 
 struct ProfileView_Previews: PreviewProvider {
+
     static var previews: some View {
         ProfileView()
+            .environmentObject(AuthViewModel())
     }
 }

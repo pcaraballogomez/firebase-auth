@@ -12,6 +12,8 @@ struct InputView: View {
     let title: String
     let placeholder: String
     var isSecuredField = false
+    var errorMessage: String?
+    var endEditingAction: (() -> Void)?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -24,8 +26,17 @@ struct InputView: View {
                 SecureField(placeholder, text: $text)
                     .font(.system(size: 14))
             } else {
-                TextField(placeholder, text: $text)
+                TextField(placeholder, text: $text, onEditingChanged: { editingChanged in
+                    guard !editingChanged else { return }
+                    endEditingAction?()
+                })
                     .font(.system(size: 14))
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+            }
+
+            if let errorMessage {
+                InputErrorText(text: errorMessage)
             }
 
             Divider()

@@ -1,0 +1,57 @@
+/*
+  Localizable.strings
+*/
+
+// Account
+"account.error.credentials" = "Credentials error: ";
+"account.error.unavailableSignIn" = "Signing in is not available at the moment.";
+"account.error.unavailableAccountDeletion" = "Account cannot be deleted at the moment.";
+"account.error.unavailableSigningOut" = "Signing out is not available at the moment.";
+
+// Common
+"common.tryAgainLater" = "\nPlease, try again later.";
+
+// Login
+"login.title" = "Login";
+"login.email" = "Email address";
+"login.emailPlaceholder" = "name@example.com";
+"login.password" = "Password";
+"login.passwordPlaceholder" = "Enter your password";
+"login.signIn" = "Sign in";
+"login.noAccount" = "Don't have an account";
+"login.signUp" = "Sign up";
+
+// Profile
+"profile.title" = "Profile";
+"profile.noUserLogged" = "No user logged in";
+"profile.section.general" = "General";
+"profile.section.account" = "Account";
+"profile.version" = "Version";
+"profile.signOut" = "Sign out";
+"profile.deleteAccount" = "Delete account";
+
+// Registration
+"registration.title" = "Registration";
+"registration.email" = "Email address";
+"registration.emailPlaceholder" = "name@example.com";
+"registration.fullName" = "Full name";
+"registration.fullNamePlaceholder" = "Enter your name";
+"registration.password" = "Password";
+"registration.passwordPlaceholder" = "Enter your password";
+"registration.confirmPassword" = "Confirm password";
+"registration.confirmPasswordPlaceholder" = "Confirm your password";
+"registration.signUp" = "Sign up";
+"registration.haveAccount" = "Already have an account";
+"registration.signIn" = "Sign in";
+
+// User error
+"userError.somethingWentWrong" = "Sorry, something went wrong.";
+"userError.serverFailed" = "Sorry, the connection to our server failed.";
+
+// Validation
+"validation.invalidEmail" = "The email format is not valid.";
+"validation.passwordTooShort" = "The password must be at least 8 characters long.";
+"validation.passwordMissingUppercase" = "The password must contain at least one uppercase letter.";
+"validation.passwordMissingLowercase" = "The password must contain at least one lowercase letter.";
+"validation.passwordMissingDigit" = "The password must contain at least one number.";
+"validation.passwordsAreNotEqual" = "The passwords must match.";

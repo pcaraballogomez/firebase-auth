@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SettingsRowView: View {
-    let systemImageName: String
+    let imageSystemName: Constants.ImageSystemName
     let title: String
     let tintColor: Color
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: systemImageName)
+            Image(imageSystemName: imageSystemName)
                 .imageScale(.small)
                 .font(.title)
                 .foregroundColor(tintColor)
@@ -28,8 +28,8 @@ struct SettingsRowView: View {
 
 struct SettingsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsRowView(systemImageName: "gear",
-                        title: "Version",
+        SettingsRowView(imageSystemName: .gear,
+                        title: Resources.Strings.Profile.version,
                         tintColor: Color(.systemGray))
     }
 }
