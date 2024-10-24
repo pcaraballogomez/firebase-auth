@@ -9,6 +9,11 @@
 "account.error.unavailableSigningOut" = "El deslogueo de cuenta no está disponible en estos momentos.";
 
 // Common
+"common.accept" = "Accept";
+"common.delete" = "Borrar";
+"common.edit" = "Editar";
+"common.error" = "Error";
+"common.save" = "Guardar";
 "common.tryAgainLater" = "\nPor favor, inténtelo de nuevo más tarde.";
 
 // Login
@@ -29,6 +34,7 @@
 "profile.version" = "Versión";
 "profile.signOut" = "Desloguearse";
 "profile.deleteAccount" = "Borrar cuenta";
+"profile.confirmDeleteAccount" = "¿Está seguro de que quiere borrar su cuenta?";
 
 // Registration
 "registration.title" = "Registro";

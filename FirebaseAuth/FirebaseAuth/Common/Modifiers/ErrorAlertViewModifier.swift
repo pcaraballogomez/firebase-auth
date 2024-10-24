@@ -1,5 +1,5 @@
 //
-//  ErrorAlertView.swift
+//  ErrorAlertViewModifier.swift
 //  FirebaseAuth
 //
 //  Created by Pablo Caraballo Gómez on 14/10/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ErrorAlertView: ViewModifier {
+struct ErrorAlertViewModifier: ViewModifier {
     @Binding var isPresented: Bool
     let errorMessage: String
 
@@ -15,9 +15,9 @@ struct ErrorAlertView: ViewModifier {
         content
             .alert(isPresented: $isPresented) {
                 Alert(
-                    title: Text("Error"),
+                    title: Text(Resources.Strings.Common.error),
                     message: Text(errorMessage),
-                    dismissButton: .default(Text("OK"))
+                    dismissButton: .default(Text(Resources.Strings.Common.accept))
                 )
             }
     }
@@ -25,6 +25,7 @@ struct ErrorAlertView: ViewModifier {
 
 extension View {
     func errorAlert(isPresented: Binding<Bool>, errorMessage: String) -> some View {
-        modifier(ErrorAlertView(isPresented: isPresented, errorMessage: errorMessage))
+        modifier(ErrorAlertViewModifier(isPresented: isPresented,
+                                        errorMessage: errorMessage))
     }
 }

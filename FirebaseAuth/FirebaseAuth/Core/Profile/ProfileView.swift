@@ -11,6 +11,7 @@ struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
+    @State private var showDeleteConfirmation = false
 
     private struct VisualConstants {
         static let spacing = 4.0
@@ -89,18 +90,39 @@ struct ProfileView: View {
             }
 
             Button {
-                Task {
-                    do {
-                        try await viewModel.deleteAccount()
-                    } catch {
-                        showError(withMessage: Resources.Strings.Account.unavailableAccountDeletion +
-                                  Resources.Strings.Common.tryAgainLater)
-                    }
-                }
+                showDeleteConfirmation = true
             } label: {
                 SettingsRowView(imageSystemName: .xMarkCircleFill,
                                 title: Resources.Strings.Profile.deleteAccount,
                                 tintColor: .red)
+            }
+            .alert(isPresented: $showDeleteConfirmation) {
+                deleteConfirmationAlert
+            }
+        }
+    }
+
+    // MARK: - Delete confirmation alert
+    private var deleteConfirmationAlert: Alert {
+        Alert(
+            title: Text(Resources.Strings.Profile.deleteAccount),
+            message: Text(Resources.Strings.Profile.confirmDeleteAccount),
+            primaryButton: .destructive(Text(Resources.Strings.Common.delete)) {
+                deleteAccount()
+            },
+            secondaryButton: .cancel()
+        )
+    }
+
+    // MARK: - Private methods
+
+    private func deleteAccount() {
+        Task {
+            do {
+                try await viewModel.deleteAccount()
+            } catch {
+                showError(withMessage: Resources.Strings.Account.unavailableAccountDeletion +
+                          Resources.Strings.Common.tryAgainLater)
             }
         }
     }

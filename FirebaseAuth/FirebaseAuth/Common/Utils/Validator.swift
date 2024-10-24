@@ -15,7 +15,7 @@ enum ValidationError: LocalizedError {
     case passwordMissingDigit
     case passwordsAreNotEqual
 
-    var errorDescription: String {
+    var errorDescription: String? {
         switch self {
         case .invalidEmail:
             return Resources.Strings.Validation.invalidEmail

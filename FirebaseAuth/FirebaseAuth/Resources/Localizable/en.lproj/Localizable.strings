@@ -9,6 +9,11 @@
 "account.error.unavailableSigningOut" = "Signing out is not available at the moment.";
 
 // Common
+"common.accept" = "Accept";
+"common.delete" = "Delete";
+"common.edit" = "Edit";
+"common.error" = "Error";
+"common.save" = "Save";
 "common.tryAgainLater" = "\nPlease, try again later.";
 
 // Login
@@ -29,6 +34,7 @@
 "profile.version" = "Version";
 "profile.signOut" = "Sign out";
 "profile.deleteAccount" = "Delete account";
+"profile.confirmDeleteAccount" = "Are you sure you want to delete your account?";
 
 // Registration
 "registration.title" = "Registration";

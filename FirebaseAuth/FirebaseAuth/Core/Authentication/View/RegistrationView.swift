@@ -65,8 +65,9 @@ struct RegistrationView: View {
 
             if !confirmPassword.isEmpty,
                case let .failure(error) = Validator.validatePassword(password,
-                                                                     andConfirmation: confirmPassword) {
-                InputErrorText(text: error.localizedDescription)
+                                                                     andConfirmation: confirmPassword),
+               let errorText = error.errorDescription {
+                InputErrorText(text: errorText)
             }
         }
         .padding(.horizontal)
@@ -132,7 +133,7 @@ struct RegistrationView: View {
             emailErrorMessage = nil
             return
         }
-        emailErrorMessage = error.localizedDescription
+        emailErrorMessage = error.errorDescription
     }
 }
 

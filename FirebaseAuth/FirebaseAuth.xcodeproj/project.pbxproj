@@ -29,7 +29,7 @@
 		F24A5FAD2CC8FF2A00A8FAED /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FAC2CC8FF2A00A8FAED /* Image+Extension.swift */; };
 		F24A5FAF2CC8FF5900A8FAED /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FAE2CC8FF5900A8FAED /* ActionButton.swift */; };
 		F24A5FB12CC8FF5E00A8FAED /* AppLogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FB02CC8FF5E00A8FAED /* AppLogoImage.swift */; };
-		F24A5FB32CC8FFA800A8FAED /* ErrorAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FB22CC8FFA800A8FAED /* ErrorAlertView.swift */; };
+		F24A5FB32CC8FFA800A8FAED /* ErrorAlertViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FB22CC8FFA800A8FAED /* ErrorAlertViewModifier.swift */; };
 		F24A5FB72CC8FFF900A8FAED /* ActionButtonStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FB42CC8FFF900A8FAED /* ActionButtonStyleModifier.swift */; };
 		F25D64BE2B56541C004D7F63 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D64BD2B56541C004D7F63 /* RegistrationView.swift */; };
 		F25D64C02B5656E1004D7F63 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D64BF2B5656E1004D7F63 /* ProfileView.swift */; };
@@ -69,7 +69,7 @@
 		F24A5FAC2CC8FF2A00A8FAED /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		F24A5FAE2CC8FF5900A8FAED /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		F24A5FB02CC8FF5E00A8FAED /* AppLogoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoImage.swift; sourceTree = "<group>"; };
-		F24A5FB22CC8FFA800A8FAED /* ErrorAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertView.swift; sourceTree = "<group>"; };
+		F24A5FB22CC8FFA800A8FAED /* ErrorAlertViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModifier.swift; sourceTree = "<group>"; };
 		F24A5FB42CC8FFF900A8FAED /* ActionButtonStyleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonStyleModifier.swift; sourceTree = "<group>"; };
 		F25D64BD2B56541C004D7F63 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F25D64BF2B5656E1004D7F63 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -199,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				F24A5FB42CC8FFF900A8FAED /* ActionButtonStyleModifier.swift */,
+				F24A5FB22CC8FFA800A8FAED /* ErrorAlertViewModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -271,7 +272,6 @@
 			children = (
 				F24A5FAE2CC8FF5900A8FAED /* ActionButton.swift */,
 				F24A5FB02CC8FF5E00A8FAED /* AppLogoImage.swift */,
-				F24A5FB22CC8FFA800A8FAED /* ErrorAlertView.swift */,
 				F20097262CC8FD28009C328A /* InputErrorText.swift */,
 				F20097272CC8FD28009C328A /* InputView.swift */,
 				F20097282CC8FD28009C328A /* SettingsRowView.swift */,
@@ -417,7 +417,7 @@
 				F24A5FA52CC8FE4600A8FAED /* FirestorePersistencyService.swift in Sources */,
 				F200972B2CC8FD28009C328A /* SettingsRowView.swift in Sources */,
 				F27E15032B5507DC00826709 /* ContentView.swift in Sources */,
-				F24A5FB32CC8FFA800A8FAED /* ErrorAlertView.swift in Sources */,
+				F24A5FB32CC8FFA800A8FAED /* ErrorAlertViewModifier.swift in Sources */,
 				F24A5FAD2CC8FF2A00A8FAED /* Image+Extension.swift in Sources */,
 				F27E15012B5507DC00826709 /* FirebaseAuthApp.swift in Sources */,
 				F200972E2CC8FD40009C328A /* UserAvatar.swift in Sources */,

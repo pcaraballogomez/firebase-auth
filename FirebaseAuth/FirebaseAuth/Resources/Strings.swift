@@ -10,6 +10,11 @@ extension Resources.Strings {
     }
 
     struct Common {
+        static let accept = "common.accept".localized
+        static let delete = "common.delete".localized
+        static let edit = "common.edit".localized
+        static let error = "common.error".localized
+        static let save = "common.save".localized
         static let tryAgainLater = "common.tryAgainLater".localized
     }
 
@@ -30,6 +35,7 @@ extension Resources.Strings {
         static let version = "profile.version".localized
         static let signOut = "profile.signOut".localized
         static let deleteAccount = "profile.deleteAccount".localized
+        static let confirmDeleteAccount = "profile.confirmDeleteAccount".localized
 
         // Sections
         static let general = "profile.section.general".localized
