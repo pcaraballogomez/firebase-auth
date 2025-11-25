@@ -20,7 +20,7 @@ class AuthViewModel: ObservableObject {
     @Published var currentUser: User?
     private let userPersistencyService: UserPersistencyServiceProtocol
 
-    init(userPersistencyService: UserPersistencyServiceProtocol = FirestorePersistencyService()) {
+    init(userPersistencyService: UserPersistencyServiceProtocol = FirestoreUserPersistencyService()) {
         self.userPersistencyService = userPersistencyService
         userSession = Auth.auth().currentUser
 

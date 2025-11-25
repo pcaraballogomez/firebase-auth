@@ -23,8 +23,6 @@
 		F20097302CC8FD57009C328A /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200972F2CC8FD57009C328A /* Bundle+Extension.swift */; };
 		F20097332CC8FDA0009C328A /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20097312CC8FDA0009C328A /* Validator.swift */; };
 		F20097362CC8FDB2009C328A /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20097342CC8FDB2009C328A /* UserDefaultsProvider.swift */; };
-		F24A5FA52CC8FE4600A8FAED /* FirestorePersistencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FA22CC8FE4600A8FAED /* FirestorePersistencyService.swift */; };
-		F24A5FA62CC8FE4600A8FAED /* PersistencyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FA32CC8FE4600A8FAED /* PersistencyServiceProtocol.swift */; };
 		F24A5FAA2CC8FEC200A8FAED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FA72CC8FEC100A8FAED /* Constants.swift */; };
 		F24A5FAD2CC8FF2A00A8FAED /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FAC2CC8FF2A00A8FAED /* Image+Extension.swift */; };
 		F24A5FAF2CC8FF5900A8FAED /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24A5FAE2CC8FF5900A8FAED /* ActionButton.swift */; };
@@ -44,6 +42,8 @@
 		F27E15032B5507DC00826709 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15022B5507DC00826709 /* ContentView.swift */; };
 		F27E15082B5507DE00826709 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27E15072B5507DE00826709 /* Preview Assets.xcassets */; };
 		F27E15192B5508C000826709 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15182B5508C000826709 /* LoginView.swift */; };
+		F2A04B992ED60CE400084EF1 /* FirestoreUserPersistencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A04B962ED60CE400084EF1 /* FirestoreUserPersistencyService.swift */; };
+		F2A04B9B2ED60CE400084EF1 /* PersistencyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A04B972ED60CE400084EF1 /* PersistencyServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +63,6 @@
 		F200972F2CC8FD57009C328A /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		F20097312CC8FDA0009C328A /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F20097342CC8FDB2009C328A /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
-		F24A5FA22CC8FE4600A8FAED /* FirestorePersistencyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestorePersistencyService.swift; sourceTree = "<group>"; };
-		F24A5FA32CC8FE4600A8FAED /* PersistencyServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyServiceProtocol.swift; sourceTree = "<group>"; };
 		F24A5FA72CC8FEC100A8FAED /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F24A5FAC2CC8FF2A00A8FAED /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		F24A5FAE2CC8FF5900A8FAED /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
@@ -81,6 +79,8 @@
 		F27E15022B5507DC00826709 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F27E15072B5507DE00826709 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F27E15182B5508C000826709 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F2A04B962ED60CE400084EF1 /* FirestoreUserPersistencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUserPersistencyService.swift; sourceTree = "<group>"; };
+		F2A04B972ED60CE400084EF1 /* PersistencyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,19 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				F27E15132B55082E00826709 /* Model */,
-				F24A5FA42CC8FE4600A8FAED /* Persistency */,
+				F2A04B982ED60CE400084EF1 /* Persistency */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		F24A5FA42CC8FE4600A8FAED /* Persistency */ = {
-			isa = PBXGroup;
-			children = (
-				F24A5FA22CC8FE4600A8FAED /* FirestorePersistencyService.swift */,
-				F24A5FA32CC8FE4600A8FAED /* PersistencyServiceProtocol.swift */,
-			);
-			name = Persistency;
-			path = ../../../../WeeklyMenu/WeeklyMenu/WeeklyMenu/Network/Service/Persistency;
 			sourceTree = "<group>";
 		};
 		F24A5FA92CC8FEC100A8FAED /* Constants */ = {
@@ -323,6 +313,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		F2A04B982ED60CE400084EF1 /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				F2A04B962ED60CE400084EF1 /* FirestoreUserPersistencyService.swift */,
+				F2A04B972ED60CE400084EF1 /* PersistencyServiceProtocol.swift */,
+			);
+			path = Persistency;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,12 +408,12 @@
 				F27E15192B5508C000826709 /* LoginView.swift in Sources */,
 				F20097302CC8FD57009C328A /* Bundle+Extension.swift in Sources */,
 				F20097172CC8FC3D009C328A /* Images.swift in Sources */,
+				F2A04B992ED60CE400084EF1 /* FirestoreUserPersistencyService.swift in Sources */,
+				F2A04B9B2ED60CE400084EF1 /* PersistencyServiceProtocol.swift in Sources */,
 				F20097362CC8FDB2009C328A /* UserDefaultsProvider.swift in Sources */,
 				F20097252CC8FCC7009C328A /* String+Extension.swift in Sources */,
 				F20097152CC8FC3D009C328A /* Colors.swift in Sources */,
 				F24A5FAA2CC8FEC200A8FAED /* Constants.swift in Sources */,
-				F24A5FA62CC8FE4600A8FAED /* PersistencyServiceProtocol.swift in Sources */,
-				F24A5FA52CC8FE4600A8FAED /* FirestorePersistencyService.swift in Sources */,
 				F200972B2CC8FD28009C328A /* SettingsRowView.swift in Sources */,
 				F27E15032B5507DC00826709 /* ContentView.swift in Sources */,
 				F24A5FB32CC8FFA800A8FAED /* ErrorAlertViewModifier.swift in Sources */,
