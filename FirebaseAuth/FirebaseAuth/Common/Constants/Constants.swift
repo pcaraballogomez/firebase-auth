@@ -46,6 +46,7 @@ enum Constants {
         static let buttonHeight = 48.0
         static let cornerRadius = 10.0
         static let imageWidth = 80.0
+        static let textFieldHeight = 30.0
     }
 
     struct SpacingSize {

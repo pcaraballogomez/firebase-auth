@@ -39,9 +39,10 @@ struct RegistrationView: View {
             InputView(text: $email,
                       title: Resources.Strings.Registration.email,
                       placeholder: Resources.Strings.Registration.emailPlaceholder,
-                      errorMessage: emailErrorMessage) {
+                      errorMessage: emailErrorMessage,
+                      endEditingAction: {
                 validateEmail()
-            }
+            })
 
             InputView(text: $fullName,
                       title: Resources.Strings.Registration.fullName,
@@ -56,11 +57,12 @@ struct RegistrationView: View {
                 InputView(text: $confirmPassword,
                           title: Resources.Strings.Registration.confirmPassword,
                           placeholder: Resources.Strings.Registration.confirmPasswordPlaceholder,
-                          isSecuredField: true)
-                if !confirmPassword.isEmpty {
-                    passwordConfirmationImage
-                }
-
+                          isSecuredField: true,
+                          trailingContent: {
+                    if !confirmPassword.isEmpty {
+                        passwordConfirmationImage
+                    }
+                })
             }
 
             if !confirmPassword.isEmpty,

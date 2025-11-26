@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InputView: View {
+struct InputView<TrailingContent: View>: View {
     @Binding var text: String
     let title: String
     let placeholder: String
@@ -16,8 +16,48 @@ struct InputView: View {
     var textContentType: UITextContentType? = nil
     var keyboardType: UIKeyboardType = .default
     var endEditingAction: (() -> Void)?
+    var trailingContent: (() -> TrailingContent)?
 
     @State private var isPasswordVisible = false
+
+    init(text: Binding<String>,
+         title: String,
+         placeholder: String,
+         isSecuredField: Bool = false,
+         errorMessage: String? = nil,
+         textContentType: UITextContentType? = nil,
+         keyboardType: UIKeyboardType = .default,
+         endEditingAction: (() -> Void)? = nil) where TrailingContent == EmptyView {
+        self._text = text
+        self.title = title
+        self.placeholder = placeholder
+        self.isSecuredField = isSecuredField
+        self.errorMessage = errorMessage
+        self.textContentType = textContentType
+        self.keyboardType = keyboardType
+        self.endEditingAction = endEditingAction
+        self.trailingContent = nil
+    }
+
+    init(text: Binding<String>,
+         title: String,
+         placeholder: String,
+         isSecuredField: Bool = false,
+         errorMessage: String? = nil,
+         textContentType: UITextContentType? = nil,
+         keyboardType: UIKeyboardType = .default,
+         endEditingAction: (() -> Void)? = nil,
+         @ViewBuilder trailingContent: @escaping () -> TrailingContent) {
+        self._text = text
+        self.title = title
+        self.placeholder = placeholder
+        self.isSecuredField = isSecuredField
+        self.errorMessage = errorMessage
+        self.textContentType = textContentType
+        self.keyboardType = keyboardType
+        self.endEditingAction = endEditingAction
+        self.trailingContent = trailingContent
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -62,14 +102,20 @@ struct InputView: View {
             }
             .inputFieldHeight()
 
-            if !text.isEmpty {
-                eyeButton
-                    .alignmentGuide(.firstTextBaseline) { dimension in
-                        dimension[.bottom] / 2
-                    }
+            HStack(spacing: 8) {
+                if let trailingContent = trailingContent {
+                    trailingContent()
+                }
+
+                if !text.isEmpty {
+                    eyeButton
+                }
+            }
+            .alignmentGuide(.firstTextBaseline) { dimension in
+                dimension[.bottom] / 2
             }
         }
-        .frame(height: 30)
+        .frame(height: Constants.Size.textFieldHeight)
     }
 
     private var standardTextField: some View {

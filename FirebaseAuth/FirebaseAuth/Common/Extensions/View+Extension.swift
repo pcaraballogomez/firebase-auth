@@ -28,7 +28,10 @@ struct InputFieldModifier: ViewModifier {
 extension View {
 
     @ViewBuilder
-    func applyIf<T: View>(_ condition: Bool, transform: (Self) -> T) -> some View {
+    func applyIf<T: View>(
+        _ condition: Bool,
+        transform: (Self) -> T
+    ) -> some View {
         if condition {
             transform(self)
         } else {
@@ -60,6 +63,6 @@ extension View {
     }
 
     func inputFieldHeight() -> some View {
-        self.frame(minHeight: 30)
+        frame(minHeight: Constants.Size.textFieldHeight)
     }
 }
