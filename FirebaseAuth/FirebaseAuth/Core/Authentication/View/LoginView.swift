@@ -37,12 +37,15 @@ struct LoginView: View {
         VStack(spacing: Constants.SpacingSize.LSpacing) {
             InputView(text: $email,
                       title: Resources.Strings.Login.email.capitalized,
-                      placeholder: Resources.Strings.Login.emailPlaceholder)
+                      placeholder: Resources.Strings.Login.emailPlaceholder,
+                      textContentType: .username,
+                      keyboardType: .emailAddress)
 
             InputView(text: $password,
                       title: Resources.Strings.Login.password,
                       placeholder: Resources.Strings.Login.passwordPlaceholder,
-                      isSecuredField: true)
+                      isSecuredField: true,
+                      textContentType: .password)
         }
         .padding(.horizontal)
         .padding(.top, Constants.SpacingSize.MSpacing)

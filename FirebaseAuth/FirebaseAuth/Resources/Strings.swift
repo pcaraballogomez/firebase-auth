@@ -18,6 +18,11 @@ extension Resources.Strings {
         static let tryAgainLater = "common.tryAgainLater".localized
     }
 
+    struct Input {
+        static let showPasswordAccessibilityLabel = "input.showPasswordAccessibilityLabel".localized
+        static let hidePasswordAccessibilityLabel = "input.hidePasswordAccessibilityLabel".localized
+    }
+
     struct Login {
         static let title = "login.title".localized
         static let email = "login.email".localized

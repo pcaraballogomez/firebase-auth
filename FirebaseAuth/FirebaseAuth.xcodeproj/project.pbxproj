@@ -44,6 +44,7 @@
 		F27E15192B5508C000826709 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15182B5508C000826709 /* LoginView.swift */; };
 		F2A04B992ED60CE400084EF1 /* FirestoreUserPersistencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A04B962ED60CE400084EF1 /* FirestoreUserPersistencyService.swift */; };
 		F2A04B9B2ED60CE400084EF1 /* PersistencyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A04B972ED60CE400084EF1 /* PersistencyServiceProtocol.swift */; };
+		F2A04BA12ED6E96700084EF1 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A04BA02ED6E96200084EF1 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		F27E15182B5508C000826709 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F2A04B962ED60CE400084EF1 /* FirestoreUserPersistencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUserPersistencyService.swift; sourceTree = "<group>"; };
 		F2A04B972ED60CE400084EF1 /* PersistencyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyServiceProtocol.swift; sourceTree = "<group>"; };
+		F2A04BA02ED6E96200084EF1 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		F20097202CC8FCC7009C328A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F2A04BA02ED6E96200084EF1 /* View+Extension.swift */,
 				F24A5FAC2CC8FF2A00A8FAED /* Image+Extension.swift */,
 				F200972F2CC8FD57009C328A /* Bundle+Extension.swift */,
 				F200971F2CC8FCC7009C328A /* String+Extension.swift */,
@@ -419,6 +422,7 @@
 				F24A5FB32CC8FFA800A8FAED /* ErrorAlertViewModifier.swift in Sources */,
 				F24A5FAD2CC8FF2A00A8FAED /* Image+Extension.swift in Sources */,
 				F27E15012B5507DC00826709 /* FirebaseAuthApp.swift in Sources */,
+				F2A04BA12ED6E96700084EF1 /* View+Extension.swift in Sources */,
 				F200972E2CC8FD40009C328A /* UserAvatar.swift in Sources */,
 				F20097292CC8FD28009C328A /* InputErrorText.swift in Sources */,
 				F24A5FB72CC8FFF900A8FAED /* ActionButtonStyleModifier.swift in Sources */,

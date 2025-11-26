@@ -16,6 +16,10 @@
 "common.save" = "Save";
 "common.tryAgainLater" = "\nPlease, try again later.";
 
+// Input
+"input.showPasswordAccessibilityLabel" = "Show password";
+"input.hidePasswordAccessibilityLabel" = "Hide password";
+
 // Login
 "login.title" = "Login";
 "login.email" = "Email address";

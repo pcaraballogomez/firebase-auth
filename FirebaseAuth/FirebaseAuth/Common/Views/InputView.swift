@@ -13,7 +13,11 @@ struct InputView: View {
     let placeholder: String
     var isSecuredField = false
     var errorMessage: String?
+    var textContentType: UITextContentType? = nil
+    var keyboardType: UIKeyboardType = .default
     var endEditingAction: (() -> Void)?
+
+    @State private var isPasswordVisible = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -23,16 +27,9 @@ struct InputView: View {
                 .font(.footnote)
 
             if isSecuredField {
-                SecureField(placeholder, text: $text)
-                    .font(.system(size: 14))
+                secureTextField
             } else {
-                TextField(placeholder, text: $text, onEditingChanged: { editingChanged in
-                    guard !editingChanged else { return }
-                    endEditingAction?()
-                })
-                    .font(.system(size: 14))
-                    .autocapitalization(.none)
-                    .autocorrectionDisabled()
+                standardTextField
             }
 
             if let errorMessage {
@@ -42,12 +39,89 @@ struct InputView: View {
             Divider()
         }
     }
+
+    // MARK: - Components
+
+    private var secureTextField: some View {
+        HStack {
+            Group {
+                if isPasswordVisible {
+                    TextField(placeholder, text: $text)
+                        .applyInputModifiers(
+                            textContentType: textContentType,
+                            keyboardType: keyboardType,
+                            disableAutocorrection: true
+                        )
+                } else {
+                    SecureField(placeholder, text: $text)
+                        .applySecureInputModifiers(
+                            textContentType: textContentType,
+                            keyboardType: keyboardType
+                        )
+                }
+            }
+            .inputFieldHeight()
+
+            if !text.isEmpty {
+                eyeButton
+                    .alignmentGuide(.firstTextBaseline) { dimension in
+                        dimension[.bottom] / 2
+                    }
+            }
+        }
+        .frame(height: 30)
+    }
+
+    private var standardTextField: some View {
+        TextField(placeholder, text: $text, onEditingChanged: { editingChanged in
+            guard !editingChanged else { return }
+            endEditingAction?()
+        })
+        .applyInputModifiers(
+            textContentType: textContentType,
+            keyboardType: keyboardType,
+            disableAutocorrection: true
+        )
+        .inputFieldHeight()
+    }
+
+    private var eyeButton: some View {
+        Button {
+            isPasswordVisible.toggle()
+        } label: {
+            Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                .foregroundColor(.black)
+                .accessibilityLabel(isPasswordVisible ?
+                                    Resources.Strings.Input.hidePasswordAccessibilityLabel : Resources.Strings.Input.showPasswordAccessibilityLabel)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
 }
 
 struct InputView_Previews: PreviewProvider {
     static var previews: some View {
-        InputView(text: .constant(""),
-                  title: "Email Address",
-                  placeholder: "name@example.com")
+        VStack(spacing: 20) {
+            InputView(
+                text: .constant(""),
+                title: "Email Address",
+                placeholder: "name@example.com"
+            )
+
+            InputView(
+                text: .constant(""),
+                title: "Contraseña",
+                placeholder: "Ingresa tu contraseña",
+                isSecuredField: true
+            )
+
+            InputView(
+                text: .constant(""),
+                title: "Contraseña con error",
+                placeholder: "Ingresa tu contraseña",
+                isSecuredField: true,
+                errorMessage: "La contraseña es demasiado corta"
+            )
+        }
+        .padding()
     }
 }
