@@ -7,28 +7,11 @@ enum Constants {
         case apiKey = "API_KEY"
     }
 
-    enum Image: String {
-        case previewPath = "/preview"
-    }
-
     enum ImageSystemName: String {
         case arrowLeftCircleFill = "arrow.left.circle.fill"
         case arrowRight = "arrow.right"
-        case antCircleFill = "ant.circle.fill"
-        case bookmark = "bookmark"
-        case bookmarkFill = "bookmark.fill"
-        case calendar = "calendar"
-        case carrot = "carrot"
         case checkmarkCircleFill = "checkmark.circle.fill"
-        case forkKnifeCircle = "fork.knife.circle"
-        case forkKnifeCircleFill = "fork.knife.circle.fill"
         case gear = "gear"
-        case magnifyingglass = "magnifyingglass"
-        case mug = "mug"
-        case photoCircleFill = "photo.circle.fill"
-        case plusCircleFill = "plus.circle.fill"
-        case profileCropCircle = "person.crop.circle"
-        case trash = "trash"
         case xMarkCircleFill = "xmark.circle.fill"
     }
 
