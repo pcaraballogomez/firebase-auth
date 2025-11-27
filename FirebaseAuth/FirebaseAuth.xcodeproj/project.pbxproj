@@ -11,7 +11,6 @@
 		F200972E2CC8FD40009C328A /* UserAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200972C2CC8FD40009C328A /* UserAvatar.swift */; };
 		F20097362CC8FDB2009C328A /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20097342CC8FDB2009C328A /* UserDefaultsProvider.swift */; };
 		F25D64C02B5656E1004D7F63 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D64BF2B5656E1004D7F63 /* ProfileView.swift */; };
-		F25D64C42B565AA7004D7F63 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D64C32B565AA7004D7F63 /* User.swift */; };
 		F25D64C62B565FBF004D7F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25D64C52B565FBF004D7F63 /* GoogleService-Info.plist */; };
 		F25D64C92B5665E7004D7F63 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F25D64C82B5665E7004D7F63 /* FirebaseAuth */; };
 		F25D64CB2B5665E7004D7F63 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F25D64CA2B5665E7004D7F63 /* FirebaseFirestore */; };
@@ -27,7 +26,6 @@
 		F200972C2CC8FD40009C328A /* UserAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAvatar.swift; sourceTree = "<group>"; };
 		F20097342CC8FDB2009C328A /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		F25D64BF2B5656E1004D7F63 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		F25D64C32B565AA7004D7F63 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F25D64C52B565FBF004D7F63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F27E14FD2B5507DC00826709 /* FirebaseAuth-foo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FirebaseAuth-foo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27E15002B5507DC00826709 /* FirebaseAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthApp.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		F27E15132B55082E00826709 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F25D64C32B565AA7004D7F63 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,7 +332,6 @@
 				F27E15032B5507DC00826709 /* ContentView.swift in Sources */,
 				F27E15012B5507DC00826709 /* FirebaseAuthApp.swift in Sources */,
 				F200972E2CC8FD40009C328A /* UserAvatar.swift in Sources */,
-				F25D64C42B565AA7004D7F63 /* User.swift in Sources */,
 				F25D64C02B5656E1004D7F63 /* ProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

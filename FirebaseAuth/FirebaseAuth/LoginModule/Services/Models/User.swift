@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct User: Identifiable, Codable {
-    let id: String
-    let fullName: String
-    let email: String
+public struct User: Identifiable, Codable {
+    public let id: String
+    public let fullName: String
+    public let email: String
 
-    var initials: String? {
+    public var initials: String? {
         let formatter = PersonNameComponentsFormatter()
         guard let components = formatter.personNameComponents(from: fullName) else { return nil }
         formatter.style = .abbreviated

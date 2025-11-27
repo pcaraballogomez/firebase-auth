@@ -15,7 +15,15 @@ protocol AuthenticationFormProtocol {
 }
 
 @MainActor
-class AuthViewModel: ObservableObject {
+public protocol AuthViewModelProtocol {
+    func signIn(withEmail email: String, password: String) async throws
+    func createUser(withEmail email: String, password: String, fullName: String) async throws
+    func signOut() throws
+    func deleteAccount() async throws
+}
+
+@MainActor
+public class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
     private let userPersistencyService: UserPersistencyServiceProtocol
@@ -28,17 +36,20 @@ class AuthViewModel: ObservableObject {
             await fetchUserIfNeeded()
         }
     }
+}
 
-    func signIn(withEmail email: String,
-                password: String) async throws {
+extension AuthViewModel: AuthViewModelProtocol {
+
+    public func signIn(withEmail email: String,
+                       password: String) async throws {
         let result = try await Auth.auth().signIn(withEmail: email,
                                                   password: password)
         try await handleUserSession(result: result)
     }
 
-    func createUser(withEmail email: String,
-                    password: String,
-                    fullName: String) async throws {
+    public func createUser(withEmail email: String,
+                           password: String,
+                           fullName: String) async throws {
         let result = try await Auth.auth().createUser(withEmail: email,
                                                       password: password)
         let user = User(id: result.user.uid, fullName: fullName, email: email)
@@ -46,25 +57,27 @@ class AuthViewModel: ObservableObject {
         try await handleUserSession(result: result)
     }
 
-    func signOut() throws {
+    public func signOut() throws {
         try Auth.auth().signOut()
         clearUserSession()
     }
 
-    func deleteAccount() async throws {
+    public func deleteAccount() async throws {
         guard let id = Auth.auth().currentUser?.uid else { throw AuthError.noCurrentUser }
         try await userPersistencyService.deleteUser(withId: id)
         try signOut()
     }
+}
 
-    // MARK: - Private methods
+// MARK: - Private methods
+private extension AuthViewModel {
 
-    private func fetchUserIfNeeded() async {
+    func fetchUserIfNeeded() async {
         guard userSession != nil else { return }
         await fetchUser()
     }
 
-    private func fetchUser() async {
+    func fetchUser() async {
         guard let id = Auth.auth().currentUser?.uid else {
             return
         }
@@ -72,19 +85,19 @@ class AuthViewModel: ObservableObject {
         print("DEBUG: Current user is \(String(describing: currentUser))")
     }
 
-    private func handleUserSession(result: AuthDataResult) async throws {
+    func handleUserSession(result: AuthDataResult) async throws {
         userSession = result.user
         await fetchUser()
     }
 
-    private func clearUserSession() {
+    func clearUserSession() {
         userSession = nil
         currentUser = nil
     }
+}
 
-    // MARK: - Errors
+// MARK: - Errors
 
-    enum AuthError: Error {
-        case noCurrentUser
-    }
+public enum AuthError: Error {
+    case noCurrentUser
 }
