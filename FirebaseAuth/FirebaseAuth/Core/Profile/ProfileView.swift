@@ -5,6 +5,7 @@
 //  Created by Pablo Caraballo Gómez on 16/1/24.
 //
 
+import LoginModule
 import SwiftUI
 
 struct ProfileView: View {

@@ -34,7 +34,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F2A0678B2ED87E1A00084EF1 /* LoginModule */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LoginModule; sourceTree = "<group>"; };
+		F2A067B62ED88A3B00084EF1 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,31 +52,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F20097112CC8FC3D009C328A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		F200971A2CC8FCA9009C328A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F24A5FA92CC8FEC100A8FAED /* Constants */,
-				F20097202CC8FCC7009C328A /* Extensions */,
-				F24A5FB62CC8FFF900A8FAED /* Modifiers */,
 				F20097352CC8FDB2009C328A /* Storage */,
-				F20097322CC8FDA0009C328A /* Utils */,
 				F27E150F2B55081400826709 /* Views */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		F20097202CC8FCC7009C328A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F200972D2CC8FD40009C328A /* Components */ = {
@@ -85,13 +67,6 @@
 				F200972C2CC8FD40009C328A /* UserAvatar.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		F20097322CC8FDA0009C328A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		F20097352CC8FDB2009C328A /* Storage */ = {
@@ -109,34 +84,6 @@
 				F2A04B982ED60CE400084EF1 /* Persistency */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		F24A5FA92CC8FEC100A8FAED /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
-		F24A5FB62CC8FFF900A8FAED /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		F25D64D02B56A851004D7F63 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F25D64D12B56A85F004D7F63 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F27E14F42B5507DC00826709 = {
@@ -158,12 +105,11 @@
 		F27E14FF2B5507DC00826709 /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
-				F2A0678B2ED87E1A00084EF1 /* LoginModule */,
+				F2A067B62ED88A3B00084EF1 /* Resources */,
 				F27E150E2B5507FF00826709 /* App */,
 				F200971A2CC8FCA9009C328A /* Common */,
 				F27E15142B55083100826709 /* Core */,
 				F200973C2CC8FE0C009C328A /* Service */,
-				F20097112CC8FC3D009C328A /* Resources */,
 				F25D64C52B565FBF004D7F63 /* GoogleService-Info.plist */,
 				F27E15062B5507DE00826709 /* Preview Content */,
 			);
@@ -204,7 +150,6 @@
 		F27E15142B55083100826709 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F27E15162B55087A00826709 /* Authentication */,
 				F27E15172B55088500826709 /* Profile */,
 				F27E15152B55086800826709 /* Root */,
 			);
@@ -217,15 +162,6 @@
 				F27E15022B5507DC00826709 /* ContentView.swift */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		F27E15162B55087A00826709 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				F25D64D02B56A851004D7F63 /* View */,
-				F25D64D12B56A85F004D7F63 /* ViewModel */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 		F27E15172B55088500826709 /* Profile */ = {
@@ -260,7 +196,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F2A0678B2ED87E1A00084EF1 /* LoginModule */,
+				F2A067B62ED88A3B00084EF1 /* Resources */,
 			);
 			name = "FirebaseAuth-foo";
 			packageProductDependencies = (
@@ -300,6 +236,7 @@
 			mainGroup = F27E14F42B5507DC00826709;
 			packageReferences = (
 				F25D64C72B5665E7004D7F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F2A067A22ED8894300084EF1 /* XCLocalSwiftPackageReference "FirebaseAuth/Packages/LoginModule" */,
 			);
 			productRefGroup = F27E14FE2B5507DC00826709 /* Products */;
 			projectDirPath = "";
@@ -533,6 +470,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F2A067A22ED8894300084EF1 /* XCLocalSwiftPackageReference "FirebaseAuth/Packages/LoginModule" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = FirebaseAuth/Packages/LoginModule;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		F25D64C72B5665E7004D7F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
