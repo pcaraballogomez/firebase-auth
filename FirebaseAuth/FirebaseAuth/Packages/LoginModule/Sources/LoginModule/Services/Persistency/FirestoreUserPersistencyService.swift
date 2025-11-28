@@ -6,6 +6,7 @@
 //
 
 import Foundation
+#if !DEBUG
 @preconcurrency import FirebaseFirestore
 
 class FirestoreUserPersistencyService: UserPersistencyServiceProtocol {
@@ -26,7 +27,8 @@ class FirestoreUserPersistencyService: UserPersistencyServiceProtocol {
         try await getUserDocument(byUserId: id).delete()
     }
 
-    func getUserDocument(byUserId id: String) -> DocumentReference {
+    private func getUserDocument(byUserId id: String) -> DocumentReference {
         database.collection(collectionName).document(id)
     }
 }
+#endif

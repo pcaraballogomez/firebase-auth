@@ -5,6 +5,7 @@
 //  Created by Pablo Caraballo Gómez on 15/1/24.
 //
 
+import LoginModule
 import SwiftUI
 
 struct ContentView: View {

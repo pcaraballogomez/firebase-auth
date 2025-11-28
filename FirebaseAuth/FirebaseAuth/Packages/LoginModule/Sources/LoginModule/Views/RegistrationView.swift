@@ -16,8 +16,11 @@ struct RegistrationView: View {
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
     @Environment(\.dismiss) var dismiss
+    #if DEBUG
+    @EnvironmentObject var viewModel: MockAuthViewModel
+    #else
     @EnvironmentObject var viewModel: AuthViewModel
-
+    #endif
     var body: some View {
         VStack {
             AppLogoImage()
@@ -156,5 +159,6 @@ extension RegistrationView: AuthenticationFormProtocol {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
+            .environmentObject(MockAuthViewModel())
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
 
 protocol PersistencyServiceProtocol: UserPersistencyServiceProtocol {}
 
@@ -16,5 +15,4 @@ protocol UserPersistencyServiceProtocol {
     func fetchUser(withId id: String) async throws -> User
     func createUser(_ user: User) async throws
     func deleteUser(withId id: String) async throws
-    func getUserDocument(byUserId id: String) -> DocumentReference
 }

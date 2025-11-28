@@ -19,6 +19,8 @@
 		F27E15012B5507DC00826709 /* FirebaseAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15002B5507DC00826709 /* FirebaseAuthApp.swift */; };
 		F27E15032B5507DC00826709 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15022B5507DC00826709 /* ContentView.swift */; };
 		F27E15082B5507DE00826709 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27E15072B5507DE00826709 /* Preview Assets.xcassets */; };
+		F2A067B82ED89ECE00084EF1 /* LoginModule in Frameworks */ = {isa = PBXBuildFile; productRef = F2A067B72ED89ECE00084EF1 /* LoginModule */; };
+		F2A067BA2ED89FC900084EF1 /* LoginModule in Frameworks */ = {isa = PBXBuildFile; productRef = F2A067B92ED89FC900084EF1 /* LoginModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A067BA2ED89FC900084EF1 /* LoginModule in Frameworks */,
+				F2A067B82ED89ECE00084EF1 /* LoginModule in Frameworks */,
 				F25D64C92B5665E7004D7F63 /* FirebaseAuth in Frameworks */,
 				F25D64CF2B5665E7004D7F63 /* FirebaseStorage in Frameworks */,
 				F25D64CB2B5665E7004D7F63 /* FirebaseFirestore in Frameworks */,
@@ -204,6 +208,8 @@
 				F25D64CA2B5665E7004D7F63 /* FirebaseFirestore */,
 				F25D64CC2B5665E7004D7F63 /* FirebaseFirestoreSwift */,
 				F25D64CE2B5665E7004D7F63 /* FirebaseStorage */,
+				F2A067B72ED89ECE00084EF1 /* LoginModule */,
+				F2A067B92ED89FC900084EF1 /* LoginModule */,
 			);
 			productName = FirebaseAuth;
 			productReference = F27E14FD2B5507DC00826709 /* FirebaseAuth-foo.app */;
@@ -509,6 +515,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F25D64C72B5665E7004D7F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F2A067B72ED89ECE00084EF1 /* LoginModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginModule;
+		};
+		F2A067B92ED89FC900084EF1 /* LoginModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

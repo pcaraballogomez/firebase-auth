@@ -6,9 +6,11 @@
 //
 
 import Foundation
+#if !DEBUG
 import Firebase
 @preconcurrency import FirebaseAuth
 import FirebaseFirestore
+#endif
 
 @MainActor
 protocol AuthenticationFormProtocol {
@@ -17,29 +19,32 @@ protocol AuthenticationFormProtocol {
 
 @MainActor
 public protocol AuthViewModelProtocol {
+    var userSession: Any? { get } // lightweight representation
+    var currentUser: User? { get }
+
     func signIn(withEmail email: String, password: String) async throws
     func createUser(withEmail email: String, password: String, fullName: String) async throws
     func signOut() throws
     func deleteAccount() async throws
 }
 
+#if !DEBUG
 @MainActor
-public class AuthViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User?
-    @Published var currentUser: User?
+public class AuthViewModel: ObservableObject, AuthViewModelProtocol {
+    public var userSession: Any? { _userSession }
+    @Published public var currentUser: User?
+    @Published private var _userSession: FirebaseAuth.User?
     private let userPersistencyService: UserPersistencyServiceProtocol
+
 
     init(userPersistencyService: UserPersistencyServiceProtocol = FirestoreUserPersistencyService()) {
         self.userPersistencyService = userPersistencyService
-        userSession = Auth.auth().currentUser
+        _userSession = Auth.auth().currentUser
 
         Task {
             await fetchUserIfNeeded()
         }
     }
-}
-
-extension AuthViewModel: AuthViewModelProtocol {
 
     public func signIn(withEmail email: String,
                        password: String) async throws {
@@ -87,15 +92,16 @@ private extension AuthViewModel {
     }
 
     func handleUserSession(result: AuthDataResult) async throws {
-        userSession = result.user
+        _userSession = result.user
         await fetchUser()
     }
 
     func clearUserSession() {
-        userSession = nil
+        _userSession = nil
         currentUser = nil
     }
 }
+#endif
 
 // MARK: - Errors
 
