@@ -6,24 +6,25 @@
 //
 
 import Foundation
-#if !DEBUG
 @preconcurrency import FirebaseFirestore
 
-class FirestoreUserPersistencyService: UserPersistencyServiceProtocol {
-    var collectionName: String = "users"
+public class FirestoreUserPersistencyService: UserPersistencyServiceProtocol {
+    public var collectionName: String = "users"
     private let database = Firestore.firestore()
 
-    func fetchUser(withId id: String) async throws -> User {
+    public init() {}
+
+    public func fetchUser(withId id: String) async throws -> User {
         let snapshot = try await getUserDocument(byUserId: id).getDocument()
         return try snapshot.data(as: User.self)
     }
 
-    func createUser(_ user: User) async throws {
+    public func createUser(_ user: User) async throws {
         let encodedUser = try Firestore.Encoder().encode(user)
         try await getUserDocument(byUserId: user.id).setData(encodedUser)
     }
 
-    func deleteUser(withId id: String) async throws {
+    public func deleteUser(withId id: String) async throws {
         try await getUserDocument(byUserId: id).delete()
     }
 
@@ -31,4 +32,3 @@ class FirestoreUserPersistencyService: UserPersistencyServiceProtocol {
         database.collection(collectionName).document(id)
     }
 }
-#endif

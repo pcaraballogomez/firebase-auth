@@ -6,11 +6,9 @@
 //
 
 import Foundation
-#if !DEBUG
 import Firebase
 @preconcurrency import FirebaseAuth
 import FirebaseFirestore
-#endif
 
 @MainActor
 protocol AuthenticationFormProtocol {
@@ -18,7 +16,7 @@ protocol AuthenticationFormProtocol {
 }
 
 @MainActor
-public protocol AuthViewModelProtocol {
+public protocol AuthViewModelProtocol: ObservableObject {
     var userSession: Any? { get } // lightweight representation
     var currentUser: User? { get }
 
@@ -28,9 +26,8 @@ public protocol AuthViewModelProtocol {
     func deleteAccount() async throws
 }
 
-#if !DEBUG
 @MainActor
-public class AuthViewModel: ObservableObject, AuthViewModelProtocol {
+public class AuthViewModel: AuthViewModelProtocol {
     public var userSession: Any? { _userSession }
     @Published public var currentUser: User?
     @Published private var _userSession: FirebaseAuth.User?
@@ -101,7 +98,6 @@ private extension AuthViewModel {
         currentUser = nil
     }
 }
-#endif
 
 // MARK: - Errors
 

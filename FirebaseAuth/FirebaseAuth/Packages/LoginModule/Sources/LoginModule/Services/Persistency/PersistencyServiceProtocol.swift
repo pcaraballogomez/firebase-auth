@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol PersistencyServiceProtocol: UserPersistencyServiceProtocol {}
+public protocol PersistencyServiceProtocol: UserPersistencyServiceProtocol {}
 
 @MainActor
-protocol UserPersistencyServiceProtocol {
+public protocol UserPersistencyServiceProtocol {
     var collectionName: String { get }
     func fetchUser(withId id: String) async throws -> User
     func createUser(_ user: User) async throws

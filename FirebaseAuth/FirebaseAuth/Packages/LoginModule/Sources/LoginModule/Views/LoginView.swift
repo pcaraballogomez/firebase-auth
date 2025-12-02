@@ -12,11 +12,7 @@ public struct LoginView: View {
     @State private var password = ""
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
-    #if DEBUG
-    @EnvironmentObject var viewModel: MockAuthViewModel
-    #else
-    @EnvironmentObject var viewModel: AuthViewModel
-    #endif
+    @Environment(\.authViewModel) private var viewModel: (any AuthViewModelProtocol)
 
     public var body: some View {
         NavigationStack {
@@ -110,6 +106,6 @@ extension LoginView: AuthenticationFormProtocol {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-            .environmentObject(MockAuthViewModel())
+            .environment(\.authViewModel, MockAuthViewModel())
     }
 }
