@@ -2,6 +2,11 @@ import SwiftUI
 
 enum Constants {
 
+    enum ConfigKey: String {
+        case baseUrl = "BASE_URL"
+        case apiKey = "API_KEY"
+    }
+
     enum ImageSystemName: String {
         case arrowLeftCircleFill = "arrow.left.circle.fill"
         case arrowRight = "arrow.right"
