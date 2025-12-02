@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+public struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var showErrorAlert = false
@@ -18,7 +18,7 @@ struct LoginView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     #endif
 
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             VStack {
                 Spacer()

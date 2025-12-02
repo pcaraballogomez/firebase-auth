@@ -29,5 +29,5 @@ struct UserAvatar: View {
 }
 
 #Preview {
-    UserAvatar(initials: User.mockUser.initials)
+    UserAvatar(initials: "PC")
 }
