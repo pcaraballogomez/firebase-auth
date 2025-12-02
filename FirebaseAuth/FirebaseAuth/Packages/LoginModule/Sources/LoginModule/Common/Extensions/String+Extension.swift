@@ -7,22 +7,4 @@ extension String {
         let auxString = (self as NSString).replacingOccurrences(of: "\0", with: "")
         return NSLocalizedString(auxString, tableName: nil, bundle: .module, value: "", comment: "")
     }
-
-    var toUrl: URL? {
-        URL(string: self)
-    }
-}
-
-extension Optional where Wrapped == String {
-
-    var isNilOrEmpty: Bool {
-        guard let unwrappedString = self else {
-            return true
-        }
-        return unwrappedString.isEmpty || unwrappedString == " "
-    }
-
-    var hasValue: Bool {
-        !self.isNilOrEmpty
-    }
 }

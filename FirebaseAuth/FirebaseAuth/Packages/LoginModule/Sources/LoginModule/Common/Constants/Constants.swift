@@ -6,7 +6,6 @@ enum Constants {
         case arrowLeftCircleFill = "arrow.left.circle.fill"
         case arrowRight = "arrow.right"
         case checkmarkCircleFill = "checkmark.circle.fill"
-        case gear
         case xMarkCircleFill = "xmark.circle.fill"
     }
 
