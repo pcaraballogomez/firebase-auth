@@ -9,27 +9,12 @@ import Foundation
 import Firebase
 @preconcurrency import FirebaseAuth
 import FirebaseFirestore
-
-@MainActor
-protocol AuthenticationFormProtocol {
-    var formIsValid: Bool { get }
-}
-
-@MainActor
-public protocol AuthViewModelProtocol: ObservableObject {
-    var userSession: Any? { get } // lightweight representation
-    var currentUser: User? { get }
-
-    func signIn(withEmail email: String, password: String) async throws
-    func createUser(withEmail email: String, password: String, fullName: String) async throws
-    func signOut() throws
-    func deleteAccount() async throws
-}
+import LoginModule
 
 @MainActor
 public class AuthViewModel: AuthViewModelProtocol {
     public var userSession: Any? { _userSession }
-    @Published public var currentUser: User?
+    @Published public var currentUser: LoginModule.User?
     @Published private var _userSession: FirebaseAuth.User?
     private let userPersistencyService: UserPersistencyServiceProtocol
 

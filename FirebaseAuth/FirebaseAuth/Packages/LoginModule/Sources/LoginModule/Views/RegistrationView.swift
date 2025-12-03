@@ -156,6 +156,5 @@ extension RegistrationView: AuthenticationFormProtocol {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
-            .environment(\.authViewModel, MockAuthViewModel())
     }
 }

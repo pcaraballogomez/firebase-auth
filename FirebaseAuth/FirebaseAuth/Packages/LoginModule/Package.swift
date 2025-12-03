@@ -9,6 +9,7 @@ let package = Package(
     platforms: [.iOS(.v16)],
     products: [
         .library(name: "LoginModule", targets: ["LoginModule"]),
+        .library(name: "LoginModuleFirebase", targets: ["LoginModuleFirebase"]),
     ],
     dependencies: [
         .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.0.0")
@@ -16,12 +17,17 @@ let package = Package(
     targets: [
         .target(
             name: "LoginModule",
-            dependencies: [
-                .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
-                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
-            ],
+            dependencies: [],
             resources: [
                 .process("Resources")
+            ]
+        ),
+        .target(
+            name: "LoginModuleFirebase",
+            dependencies: [
+                "LoginModule",
+                .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
             ]
         ),
         .testTarget(

@@ -7,6 +7,7 @@
 
 import Foundation
 @preconcurrency import FirebaseFirestore
+import LoginModule
 
 public class FirestoreUserPersistencyService: UserPersistencyServiceProtocol {
     public var collectionName: String = "users"
