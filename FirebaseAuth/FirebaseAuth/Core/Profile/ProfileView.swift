@@ -6,6 +6,7 @@
 //
 
 import LoginModule
+import LoginModuleFirebase
 import SwiftUI
 
 struct ProfileView: View {
@@ -30,9 +31,7 @@ struct ProfileView: View {
             .errorAlert(isPresented: $showErrorAlert,
                         errorMessage: errorMessage)
         } else {
-            Text(Resources.Strings.Profile.noUserLogged)
-                .font(.headline)
-                .foregroundColor(.gray)
+            LoadingDotsView()
         }
     }
 

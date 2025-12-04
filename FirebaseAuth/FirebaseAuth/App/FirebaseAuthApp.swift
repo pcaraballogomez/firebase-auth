@@ -6,7 +6,7 @@
 //
 
 import FirebaseCore
-import LoginModule
+import LoginModuleFirebase
 import SwiftUI
 
 @main
@@ -21,6 +21,7 @@ struct FirebaseAuthApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environment(\.authViewModel, viewModel)
         }
     }
 }
