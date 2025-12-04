@@ -16,6 +16,8 @@
 		F25D64CB2B5665E7004D7F63 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F25D64CA2B5665E7004D7F63 /* FirebaseFirestore */; };
 		F25D64CD2B5665E7004D7F63 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F25D64CC2B5665E7004D7F63 /* FirebaseFirestoreSwift */; };
 		F25D64CF2B5665E7004D7F63 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F25D64CE2B5665E7004D7F63 /* FirebaseStorage */; };
+		F26620292EE170A2007C17CE /* LoginModule in Frameworks */ = {isa = PBXBuildFile; productRef = F26620282EE170A2007C17CE /* LoginModule */; };
+		F266202B2EE170A2007C17CE /* LoginModuleFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = F266202A2EE170A2007C17CE /* LoginModuleFirebase */; };
 		F27E15012B5507DC00826709 /* FirebaseAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15002B5507DC00826709 /* FirebaseAuthApp.swift */; };
 		F27E15032B5507DC00826709 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27E15022B5507DC00826709 /* ContentView.swift */; };
 		F27E15082B5507DE00826709 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27E15072B5507DE00826709 /* Preview Assets.xcassets */; };
@@ -44,6 +46,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F266202C2EE171A6007C17CE /* Modifiers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Modifiers; sourceTree = "<group>"; };
 		F2A067B62ED88A3B00084EF1 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -54,6 +57,8 @@
 			files = (
 				F2A067BA2ED89FC900084EF1 /* LoginModule in Frameworks */,
 				F2A067B82ED89ECE00084EF1 /* LoginModule in Frameworks */,
+				F26620292EE170A2007C17CE /* LoginModule in Frameworks */,
+				F266202B2EE170A2007C17CE /* LoginModuleFirebase in Frameworks */,
 				F25D64C92B5665E7004D7F63 /* FirebaseAuth in Frameworks */,
 				F25D64CF2B5665E7004D7F63 /* FirebaseStorage in Frameworks */,
 				F25D64CB2B5665E7004D7F63 /* FirebaseFirestore in Frameworks */,
@@ -69,6 +74,7 @@
 			children = (
 				F2CA0F4B2EDF1194008AC4E4 /* Constants */,
 				F2CA0F422EDF0E23008AC4E4 /* Extensions */,
+				F266202C2EE171A6007C17CE /* Modifiers */,
 				F20097352CC8FDB2009C328A /* Storage */,
 				F27E150F2B55081400826709 /* Views */,
 			);
@@ -119,13 +125,13 @@
 		F27E14FF2B5507DC00826709 /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
-				F2A067B62ED88A3B00084EF1 /* Resources */,
 				F27E150E2B5507FF00826709 /* App */,
 				F200971A2CC8FCA9009C328A /* Common */,
 				F27E15142B55083100826709 /* Core */,
-				F200973C2CC8FE0C009C328A /* Service */,
 				F25D64C52B565FBF004D7F63 /* GoogleService-Info.plist */,
 				F27E15062B5507DE00826709 /* Preview Content */,
+				F2A067B62ED88A3B00084EF1 /* Resources */,
+				F200973C2CC8FE0C009C328A /* Service */,
 			);
 			path = FirebaseAuth;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				F266202C2EE171A6007C17CE /* Modifiers */,
 				F2A067B62ED88A3B00084EF1 /* Resources */,
 			);
 			name = "FirebaseAuth-foo";
@@ -238,6 +245,8 @@
 				F25D64CE2B5665E7004D7F63 /* FirebaseStorage */,
 				F2A067B72ED89ECE00084EF1 /* LoginModule */,
 				F2A067B92ED89FC900084EF1 /* LoginModule */,
+				F26620282EE170A2007C17CE /* LoginModule */,
+				F266202A2EE170A2007C17CE /* LoginModuleFirebase */,
 			);
 			productName = FirebaseAuth;
 			productReference = F27E14FD2B5507DC00826709 /* FirebaseAuth-foo.app */;
@@ -547,6 +556,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F25D64C72B5665E7004D7F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F26620282EE170A2007C17CE /* LoginModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginModule;
+		};
+		F266202A2EE170A2007C17CE /* LoginModuleFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginModuleFirebase;
 		};
 		F2A067B72ED89ECE00084EF1 /* LoginModule */ = {
 			isa = XCSwiftPackageProductDependency;

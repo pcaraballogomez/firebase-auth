@@ -2,6 +2,8 @@ import Foundation
 
 extension Resources.Strings {
 
+    // TODO: Clear unused strings
+
     struct Account {
         static let credentialsFailed = "account.error.credentials".localized
         static let unavailableSignIn = "account.error.unavailableSignIn".localized

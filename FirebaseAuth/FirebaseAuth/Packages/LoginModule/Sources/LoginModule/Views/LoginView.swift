@@ -14,6 +14,8 @@ public struct LoginView: View {
     @State private var errorMessage = ""
     @Environment(\.authViewModel) private var viewModel: (any AuthViewModelProtocol)
 
+    public init() {}
+
     public var body: some View {
         NavigationStack {
             VStack {

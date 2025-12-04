@@ -18,6 +18,8 @@ struct RegistrationView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.authViewModel) private var viewModel: any AuthViewModelProtocol
 
+    public init() {}
+
     var body: some View {
         VStack {
             AppLogoImage()
