@@ -13,6 +13,7 @@
 "common.delete" = "Borrar";
 "common.edit" = "Editar";
 "common.error" = "Error";
+"common.loading" = "Cargando";
 "common.save" = "Guardar";
 "common.tryAgainLater" = "\nPor favor, inténtelo de nuevo más tarde.";
 
@@ -32,7 +33,6 @@
 
 // Profile
 "profile.title" = "Perfil";
-"profile.noUserLogged" = "Ningún usuario logado";
 "profile.section.general" = "General";
 "profile.section.account" = "Cuenta";
 "profile.version" = "Versión";

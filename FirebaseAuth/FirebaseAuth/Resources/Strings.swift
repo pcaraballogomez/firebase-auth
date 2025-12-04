@@ -16,6 +16,7 @@ extension Resources.Strings {
         static let delete = "common.delete".localized
         static let edit = "common.edit".localized
         static let error = "common.error".localized
+        static let loading = "common.loading".localized
         static let save = "common.save".localized
         static let tryAgainLater = "common.tryAgainLater".localized
     }
@@ -38,7 +39,6 @@ extension Resources.Strings {
 
     struct Profile {
         static let title = "profile.title".localized
-        static let noUserLogged = "profile.noUserLogged".localized
         static let version = "profile.version".localized
         static let signOut = "profile.signOut".localized
         static let deleteAccount = "profile.deleteAccount".localized
