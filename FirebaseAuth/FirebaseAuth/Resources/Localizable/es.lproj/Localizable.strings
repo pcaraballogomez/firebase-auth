@@ -3,7 +3,6 @@
 */
 
 // Account
-"account.error.credentials" = "Fallo de credenciales: ";
 "account.error.unavailableSignIn" = "El login de cuenta no está disponible en estos momentos.";
 "account.error.unavailableAccountDeletion" = "El borrado de cuenta no está disponible en estos momentos.";
 "account.error.unavailableSigningOut" = "El deslogueo de cuenta no está disponible en estos momentos.";
@@ -17,20 +16,6 @@
 "common.save" = "Guardar";
 "common.tryAgainLater" = "\nPor favor, inténtelo de nuevo más tarde.";
 
-// Input
-"input.showPasswordAccessibilityLabel" = "Mostrar contraseña";
-"input.hidePasswordAccessibilityLabel" = "Ocultar contraseña";
-
-// Login
-"login.title" = "Login";
-"login.email" = "Dirección email";
-"login.emailPlaceholder" = "nombre@ejemplo.com";
-"login.password" = "Contraseña";
-"login.passwordPlaceholder" = "Introduzca su contraseña";
-"login.signIn" = "Loguearse";
-"login.noAccount" = "No tiene una cuenta";
-"login.signUp" = "Regístrese";
-
 // Profile
 "profile.title" = "Perfil";
 "profile.section.general" = "General";
@@ -39,29 +24,3 @@
 "profile.signOut" = "Desloguearse";
 "profile.deleteAccount" = "Borrar cuenta";
 "profile.confirmDeleteAccount" = "¿Está seguro de que quiere borrar su cuenta?";
-
-// Registration
-"registration.title" = "Registro";
-"registration.email" = "Dirección email";
-"registration.emailPlaceholder" = "nombre@ejemplo.com";
-"registration.fullName" = "Nombre completo";
-"registration.fullNamePlaceholder" = "Introduzca su nombre completo";
-"registration.password" = "Contraseña";
-"registration.passwordPlaceholder" = "Introduzca su contraseña";
-"registration.confirmPassword" = "Confirme contraseña";
-"registration.confirmPasswordPlaceholder" = "Confirme su contraseña";
-"registration.signUp" = "Registrarse";
-"registration.haveAccount" = "Ya tienes una cuenta";
-"registration.signIn" = "Loguearse";
-
-// User error
-"userError.somethingWentWrong" = "Lo sentimos, algo salió mal.";
-"userError.serverFailed" = "Lo sentimos, la conexión con nuestros servidores falló.";
-
-// Validation
-"validation.invalidEmail" = "El formato del email no es válido.";
-"validation.passwordTooShort" = "La contraseña debe tener al menos 8 caracteres.";
-"validation.passwordMissingUppercase" = "La contraseña debe contener al menos una letra mayúscula.";
-"validation.passwordMissingLowercase" = "La contraseña debe contener al menos una letra minúscula.";
-"validation.passwordMissingDigit" = "La contraseña debe contener al menos un número.";
-"validation.passwordsAreNotEqual" = "Las contraseñas deben coincidir.";
