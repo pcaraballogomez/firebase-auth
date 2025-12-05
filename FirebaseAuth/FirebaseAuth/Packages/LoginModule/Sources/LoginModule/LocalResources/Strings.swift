@@ -5,8 +5,6 @@ extension LocalResources.Strings {
     struct Account {
         static let credentialsFailed = "account.error.credentials".localized
         static let unavailableSignIn = "account.error.unavailableSignIn".localized
-        static let unavailableAccountDeletion = "account.error.unavailableAccountDeletion".localized
-        static let unavailableSigningOut = "account.error.unavailableSigningOut".localized
     }
 
     struct Common {
@@ -34,19 +32,6 @@ extension LocalResources.Strings {
         static let signUp = "login.signUp".localized
     }
 
-    struct Profile {
-        static let title = "profile.title".localized
-        static let noUserLogged = "profile.noUserLogged".localized
-        static let version = "profile.version".localized
-        static let signOut = "profile.signOut".localized
-        static let deleteAccount = "profile.deleteAccount".localized
-        static let confirmDeleteAccount = "profile.confirmDeleteAccount".localized
-
-        // Sections
-        static let general = "profile.section.general".localized
-        static let account = "profile.section.account".localized
-    }
-
     struct Registration {
         static let title = "registration.title".localized
         static let email = "registration.email".localized
@@ -60,11 +45,6 @@ extension LocalResources.Strings {
         static let signUp = "registration.signUp".localized
         static let haveAccount = "registration.haveAccount".localized
         static let signIn = "registration.signIn".localized
-    }
-
-    struct UserError {
-        static let somethingWentWrong = "userError.somethingWentWrong".localized
-        static let serverFailed = "userError.serverFailed".localized
     }
 
     struct Validation {

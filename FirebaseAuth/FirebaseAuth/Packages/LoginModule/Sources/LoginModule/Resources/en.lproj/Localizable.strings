@@ -5,8 +5,6 @@
 // Account
 "account.error.credentials" = "Credentials error: ";
 "account.error.unavailableSignIn" = "Signing in is not available at the moment.";
-"account.error.unavailableAccountDeletion" = "Account cannot be deleted at the moment.";
-"account.error.unavailableSigningOut" = "Signing out is not available at the moment.";
 
 // Common
 "common.accept" = "Accept";
@@ -30,16 +28,6 @@
 "login.noAccount" = "Don't have an account";
 "login.signUp" = "Sign up";
 
-// Profile
-"profile.title" = "Profile";
-"profile.noUserLogged" = "No user logged in";
-"profile.section.general" = "General";
-"profile.section.account" = "Account";
-"profile.version" = "Version";
-"profile.signOut" = "Sign out";
-"profile.deleteAccount" = "Delete account";
-"profile.confirmDeleteAccount" = "Are you sure you want to delete your account?";
-
 // Registration
 "registration.title" = "Registration";
 "registration.email" = "Email address";
@@ -53,10 +41,6 @@
 "registration.signUp" = "Sign up";
 "registration.haveAccount" = "Already have an account";
 "registration.signIn" = "Sign in";
-
-// User error
-"userError.somethingWentWrong" = "Sorry, something went wrong.";
-"userError.serverFailed" = "Sorry, the connection to our server failed.";
 
 // Validation
 "validation.invalidEmail" = "The email format is not valid.";

@@ -5,8 +5,6 @@
 // Account
 "account.error.credentials" = "Fallo de credenciales: ";
 "account.error.unavailableSignIn" = "El login de cuenta no está disponible en estos momentos.";
-"account.error.unavailableAccountDeletion" = "El borrado de cuenta no está disponible en estos momentos.";
-"account.error.unavailableSigningOut" = "El deslogueo de cuenta no está disponible en estos momentos.";
 
 // Common
 "common.accept" = "Accept";
@@ -53,10 +51,6 @@
 "registration.signUp" = "Registrarse";
 "registration.haveAccount" = "Ya tienes una cuenta";
 "registration.signIn" = "Loguearse";
-
-// User error
-"userError.somethingWentWrong" = "Lo sentimos, algo salió mal.";
-"userError.serverFailed" = "Lo sentimos, la conexión con nuestros servidores falló.";
 
 // Validation
 "validation.invalidEmail" = "El formato del email no es válido.";
