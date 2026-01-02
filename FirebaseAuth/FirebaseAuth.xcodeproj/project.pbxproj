@@ -29,7 +29,6 @@
 		F2CA0F4D2EDF11BF008AC4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA0F4C2EDF11BF008AC4E4 /* Constants.swift */; };
 		F2E02ADE2EE1CF8C002CFBFA /* LoadingDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E02ADD2EE1CF84002CFBFA /* LoadingDotsView.swift */; };
 		F2F458922F07FE2B009CE081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F458912F07FE27009CE081 /* AppDelegate.swift */; };
-		F2F458982F08016E009CE081 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2F458972F08016E009CE081 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +47,6 @@
 		F2CA0F4C2EDF11BF008AC4E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F2E02ADD2EE1CF84002CFBFA /* LoadingDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDotsView.swift; sourceTree = "<group>"; };
 		F2F458912F07FE27009CE081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2F458972F08016E009CE081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -139,7 +137,6 @@
 				F27E15062B5507DE00826709 /* Preview Content */,
 				F2A067B62ED88A3B00084EF1 /* Resources */,
 				F200973C2CC8FE0C009C328A /* Service */,
-				F2F458972F08016E009CE081 /* Info.plist */,
 			);
 			path = FirebaseAuth;
 			sourceTree = "<group>";
@@ -305,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F27E15082B5507DE00826709 /* Preview Assets.xcassets in Resources */,
-				F2F458982F08016E009CE081 /* Info.plist in Resources */,
 				F25D64C62B565FBF004D7F63 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +456,6 @@
 				DEVELOPMENT_TEAM = 268R4A74SL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FirebaseAuth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,7 +485,6 @@
 				DEVELOPMENT_TEAM = 268R4A74SL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FirebaseAuth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
