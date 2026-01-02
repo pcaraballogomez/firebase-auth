@@ -24,6 +24,7 @@ public struct LoginView: View {
                     .padding(.vertical, Constants.SpacingSize.XLSpacing)
                 credentialInputFields
                 signInActionButton
+                signInWithGoogleButton
                 Spacer()
                 signUpNavigationLink
             }
@@ -76,6 +77,17 @@ public struct LoginView: View {
             }
             .font(.system(size: 14))
         }
+    }
+
+    @ViewBuilder
+    private var signInWithGoogleButton: some View {
+        SignInWithButton(provider: .google) {
+            Task {
+                do { try await viewModel.signInWithGoogle() }
+                catch { showError(withMessage: error.localizedDescription) }
+            }
+        }
+        .padding()
     }
 
     // MARK: - Private methods
