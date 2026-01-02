@@ -18,6 +18,7 @@ public protocol AuthViewModelProtocol: ObservableObject {
     var currentUser: User? { get }
 
     func signIn(withEmail email: String, password: String) async throws
+    func signInWithGoogle() async throws
     func createUser(withEmail email: String, password: String, fullName: String) async throws
     func signOut() throws
     func deleteAccount() async throws

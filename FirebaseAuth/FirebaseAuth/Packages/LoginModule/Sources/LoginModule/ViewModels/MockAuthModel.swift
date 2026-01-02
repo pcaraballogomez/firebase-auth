@@ -18,6 +18,10 @@ class MockAuthViewModel: ObservableObject, AuthViewModelProtocol {
         print("Preview mock signIn invoked")
     }
 
+    public func signInWithGoogle() async throws {
+        print("Preview mock signInWithGoogle invoked")
+    }
+
     func createUser(withEmail email: String, password: String, fullName: String) async throws {
         print("Preview mock createUser invoked")
     }

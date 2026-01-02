@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 @preconcurrency import FirebaseAuth
 import FirebaseFirestore
+import GoogleSignIn
 import LoginModule
 
 @MainActor
@@ -32,6 +33,14 @@ public class AuthViewModel: AuthViewModelProtocol {
                        password: String) async throws {
         let result = try await Auth.auth().signIn(withEmail: email,
                                                   password: password)
+        try await handleUserSession(result: result)
+    }
+
+    public func signInWithGoogle() async throws {
+        let (idToken, accessToken) = try await performGoogleSignIn()
+        let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                       accessToken: accessToken)
+        let result = try await Auth.auth().signIn(with: credential)
         try await handleUserSession(result: result)
     }
 
@@ -65,22 +74,35 @@ private extension AuthViewModel {
         await fetchUser()
     }
 
-    func fetchUser() async {
-        guard let id = Auth.auth().currentUser?.uid else {
-            return
-        }
-        currentUser = try? await userPersistencyService.fetchUser(withId: id)
+    func fetchUser(uid: String? = nil) async {
+        let userId = uid ?? Auth.auth().currentUser?.uid
+        guard let userId else { return }
+
+        currentUser = try? await userPersistencyService.fetchUser(withId: userId)
         print("DEBUG: Current user is \(String(describing: currentUser))")
     }
 
     func handleUserSession(result: AuthDataResult) async throws {
         _userSession = result.user
-        await fetchUser()
+        await fetchUser(uid: result.user.uid)
     }
 
     func clearUserSession() {
         _userSession = nil
         currentUser = nil
+    }
+
+    nonisolated func performGoogleSignIn() async throws -> (String, String) {
+        guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootVC = await windowScene.keyWindow?.rootViewController else {
+            throw URLError(.cannotFindHost)
+        }
+
+        let signInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootVC)
+        guard let idToken = signInResult.user.idToken?.tokenString else {
+            throw URLError(.badServerResponse)
+        }
+        return (idToken, signInResult.user.accessToken.tokenString)
     }
 }
 
