@@ -25,6 +25,7 @@
 "login.password" = "Contraseña";
 "login.passwordPlaceholder" = "Introduzca su contraseña";
 "login.signIn" = "Loguearse";
+"login.signInWithFormat" = "Iniciar sesión con %@";
 "login.noAccount" = "No tiene una cuenta";
 "login.signUp" = "Regístrese";
 

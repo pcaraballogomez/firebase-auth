@@ -30,6 +30,7 @@ extension LocalResources.Strings {
         static let signIn = "login.signIn".localized
         static let noAccount = "login.noAccount".localized
         static let signUp = "login.signUp".localized
+        static let signInWithPrefix = "login.signInWithFormat".localized
     }
 
     struct Registration {

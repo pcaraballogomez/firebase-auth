@@ -25,6 +25,7 @@
 "login.password" = "Password";
 "login.passwordPlaceholder" = "Enter your password";
 "login.signIn" = "Sign in";
+"login.signInWithFormat" = "Sign in with %@";
 "login.noAccount" = "Don't have an account";
 "login.signUp" = "Sign up";
 

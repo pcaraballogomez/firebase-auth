@@ -9,4 +9,10 @@ extension LocalResources.Images {
     struct App {
         static let icon = Image("ic_app", bundle: .module)
     }
+
+    struct LoginProvider {
+        static let appleLogo = Image("apple_logo", bundle: .module)
+        static let facebookLogo = Image("facebook_logo", bundle: .module)
+        static let googleLogo = Image("google_logo", bundle: .module)
+    }
 }
