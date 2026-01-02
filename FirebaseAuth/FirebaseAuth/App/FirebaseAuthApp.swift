@@ -12,6 +12,7 @@ import SwiftUI
 @main
 struct FirebaseAuthApp: App {
     @StateObject var viewModel = AuthViewModel()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     init() {
         FirebaseApp.configure()

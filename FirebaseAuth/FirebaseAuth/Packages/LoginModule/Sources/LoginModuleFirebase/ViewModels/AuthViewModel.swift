@@ -98,6 +98,13 @@ private extension AuthViewModel {
             throw URLError(.cannotFindHost)
         }
 
+        // Build configuration from Firebase options or Info.plist
+        let clientID = FirebaseApp.app()?.options.clientID ?? Bundle.main.object(forInfoDictionaryKey: "GIDClientID") as? String
+        guard let clientID = clientID else {
+            throw URLError(.userAuthenticationRequired)
+        }
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
         let signInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootVC)
         guard let idToken = signInResult.user.idToken?.tokenString else {
             throw URLError(.badServerResponse)

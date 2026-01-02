@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   Info.plist
-   FirebaseAuth
-
-   Created by Pablo Caraballo Gómez on 2/1/26.
-   Copyright (c) 2026 ___ORGANIZATIONNAME___. All rights reserved.
--->
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.googleusercontent.apps.390830053952-juedlb5svfiv6pohn0bj9061176b9r2p</string>
+		</dict>
+	</array>
+</dict>
 </plist>
