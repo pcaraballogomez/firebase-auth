@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.pablocaraballogomez.FirebaseAuth</string>
+	<key>CLIENT_ID</key>
+	<string>390830053952-28pta881avtqmhrl31a4fetv7i389pef.apps.googleusercontent.com</string>
 	<key>CFBundleName</key>
 	<string>FirebaseAuth</string>
 	<key>CFBundleVersion</key>

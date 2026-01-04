@@ -97,8 +97,12 @@ private extension AuthViewModel {
         let user = User(id: result.user.uid,
                         fullName: fullName,
                         email: email)
-        try? await userPersistencyService.createUser(user)
-        currentUser = user
+        do {
+            try await userPersistencyService.createUser(user)
+            currentUser = user
+        } catch {
+            print("DEBUG: Error - failed to create user document: \(error)")
+        }
     }
 
     func clearUserSession() {
@@ -112,7 +116,7 @@ private extension AuthViewModel {
             throw URLError(.cannotFindHost)
         }
 
-        let clientID = FirebaseApp.app()?.options.clientID
+        let clientID = FirebaseApp.app()?.options.clientID ?? Bundle.main.googleClientID
         guard let clientID else {
             throw URLError(.userAuthenticationRequired)
         }
