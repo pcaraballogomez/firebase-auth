@@ -85,6 +85,20 @@ private extension AuthViewModel {
     func handleUserSession(result: AuthDataResult) async throws {
         _userSession = result.user
         await fetchUser(uid: result.user.uid)
+        if currentUser == nil {
+            // If there's no user document (e.g., Google sign-in), create one from auth info
+            await createUser(using: result)
+        }
+    }
+
+    func createUser(using result: AuthDataResult) async {
+        let fullName = result.user.displayName ?? ""
+        let email = result.user.email ?? ""
+        let user = User(id: result.user.uid,
+                        fullName: fullName,
+                        email: email)
+        try? await userPersistencyService.createUser(user)
+        currentUser = user
     }
 
     func clearUserSession() {
@@ -98,9 +112,8 @@ private extension AuthViewModel {
             throw URLError(.cannotFindHost)
         }
 
-        // Build configuration from Firebase options or Info.plist
-        let clientID = FirebaseApp.app()?.options.clientID ?? Bundle.main.object(forInfoDictionaryKey: "GIDClientID") as? String
-        guard let clientID = clientID else {
+        let clientID = FirebaseApp.app()?.options.clientID
+        guard let clientID else {
             throw URLError(.userAuthenticationRequired)
         }
         let config = GIDConfiguration(clientID: clientID)
