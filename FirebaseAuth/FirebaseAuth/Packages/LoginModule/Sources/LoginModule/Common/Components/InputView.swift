@@ -62,7 +62,7 @@ struct InputView<TrailingContent: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .foregroundColor(Color(.darkGray))
+                .foregroundColor(LocalResources.Colors.Common.textPrimary)
                 .fontWeight(.semibold)
                 .font(.footnote)
 
@@ -136,7 +136,7 @@ struct InputView<TrailingContent: View>: View {
             isPasswordVisible.toggle()
         } label: {
             Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                .foregroundColor(.black)
+                .foregroundColor(LocalResources.Colors.Common.textPrimary)
                 .accessibilityLabel(isPasswordVisible ?
                                     LocalResources.Strings.Input.hidePasswordAccessibilityLabel : LocalResources.Strings.Input.showPasswordAccessibilityLabel)
         }
