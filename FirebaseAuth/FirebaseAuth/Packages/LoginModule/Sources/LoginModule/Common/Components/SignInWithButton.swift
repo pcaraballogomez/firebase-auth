@@ -62,20 +62,6 @@ public struct SignInWithButton: View {
     }
 }
 
-//#Preview("Google Light") {
-//    SignInWithButton(provider: .google) {
-//        print("Google Sign In")
-//    }
-//    .preferredColorScheme(.light)
-//}
-//
-//#Preview("Google Dark") {
-//    SignInWithButton(provider: .google) {
-//        print("Google Sign In")
-//    }
-//    .preferredColorScheme(.dark)
-//}
-
 #Preview("Apple Light") {
     SignInWithButton(provider: .apple) {
         print("Apple Sign In")
@@ -86,6 +72,34 @@ public struct SignInWithButton: View {
 #Preview("Apple Dark") {
     SignInWithButton(provider: .apple) {
         print("Apple Sign In")
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Facebook Light") {
+    SignInWithButton(provider: .facebook) {
+        print("Facebook Sign In")
+    }
+    .preferredColorScheme(.light)
+}
+
+#Preview("Facebook Dark") {
+    SignInWithButton(provider: .facebook) {
+        print("Facebook Sign In")
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Google Light") {
+    SignInWithButton(provider: .google) {
+        print("Google Sign In")
+    }
+    .preferredColorScheme(.light)
+}
+
+#Preview("Google Dark") {
+    SignInWithButton(provider: .google) {
+        print("Google Sign In")
     }
     .preferredColorScheme(.dark)
 }
