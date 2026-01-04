@@ -46,11 +46,12 @@ struct ProfileView: View {
                     Text(user.fullName)
                         .font(.subheadline)
                         .fontWeight(.semibold)
+                        .foregroundColor(Resources.Colors.Common.textPrimary)
                         .padding(.top, VisualConstants.spacing)
 
                     Text(user.email)
                         .font(.footnote)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Resources.Colors.Common.textPrimary)
                 }
             }
         }
@@ -67,7 +68,7 @@ struct ProfileView: View {
                 Spacer()
                 Text(version)
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Resources.Colors.Common.textPrimary)
             }
         }
     }
