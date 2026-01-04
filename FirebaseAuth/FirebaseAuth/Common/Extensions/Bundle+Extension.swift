@@ -9,6 +9,11 @@ extension Bundle {
         return infoDictionary?["CFBundleVersion"] as? String
     }
 
+    /// Google Client ID from Info.plist (CLIENT_ID)
+    var googleClientID: String? {
+        return object(forInfoDictionaryKey: "CLIENT_ID") as? String
+    }
+
     static func getBaseUrl(withKey: Bool = true) -> String {
         guard withKey else {
             return baseUrl
