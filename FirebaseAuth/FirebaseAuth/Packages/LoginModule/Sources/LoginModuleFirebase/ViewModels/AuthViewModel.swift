@@ -116,7 +116,7 @@ private extension AuthViewModel {
             throw URLError(.cannotFindHost)
         }
 
-        let clientID = FirebaseApp.app()?.options.clientID ?? Bundle.main.googleClientID
+        let clientID = FirebaseApp.app()?.options.clientID
         guard let clientID else {
             throw URLError(.userAuthenticationRequired)
         }
