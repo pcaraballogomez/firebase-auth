@@ -5,22 +5,26 @@
 //  Created by Pablo Caraballo Gómez on 16/1/24.
 //
 
-import Foundation
 import Firebase
 @preconcurrency import FirebaseAuth
 import FirebaseFirestore
+import Foundation
 import GoogleSignIn
 import LoginModule
 
 @MainActor
 public class AuthViewModel: AuthViewModelProtocol {
-    public var userSession: Any? { _userSession }
+
     @Published public var currentUser: LoginModule.User?
     @Published private var _userSession: FirebaseAuth.User?
+
+    public var userSession: Any? { _userSession }
+    private let configuration: LoginConfiguration
     private let userPersistencyService: UserPersistencyServiceProtocol
 
-
-    public init(userPersistencyService: UserPersistencyServiceProtocol = FirestoreUserPersistencyService()) {
+    public init(configuration: LoginConfiguration,
+                userPersistencyService: UserPersistencyServiceProtocol = FirestoreUserPersistencyService()) {
+        self.configuration = configuration
         self.userPersistencyService = userPersistencyService
         _userSession = Auth.auth().currentUser
 
@@ -37,7 +41,7 @@ public class AuthViewModel: AuthViewModelProtocol {
     }
 
     public func signInWithGoogle() async throws {
-        let (idToken, accessToken) = try await performGoogleSignIn()
+        let (idToken, accessToken) = try await performGoogleSignIn(clientID: configuration.googleClientID)
         let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                        accessToken: accessToken)
         let result = try await Auth.auth().signIn(with: credential)
@@ -110,14 +114,13 @@ private extension AuthViewModel {
         currentUser = nil
     }
 
-    nonisolated func performGoogleSignIn() async throws -> (String, String) {
+    nonisolated func performGoogleSignIn(clientID: String) async throws -> (String, String) {
         guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let rootVC = await windowScene.keyWindow?.rootViewController else {
             throw URLError(.cannotFindHost)
         }
 
-        let clientID = FirebaseApp.app()?.options.clientID
-        guard let clientID else {
+        guard !clientID.isEmpty else {
             throw URLError(.userAuthenticationRequired)
         }
         let config = GIDConfiguration(clientID: clientID)

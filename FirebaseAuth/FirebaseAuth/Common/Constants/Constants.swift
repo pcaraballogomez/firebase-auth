@@ -3,8 +3,10 @@ import SwiftUI
 enum Constants {
 
     enum ConfigKey: String {
-        case baseUrl = "BASE_URL"
         case apiKey = "API_KEY"
+        case baseUrl = "BASE_URL"
+        case googleClientID = "CLIENT_ID"
+        case googleReversedClientID = "REVERSED_CLIENT_ID"
     }
 
     enum ImageSystemName: String {

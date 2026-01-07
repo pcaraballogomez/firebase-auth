@@ -138,6 +138,6 @@ struct ProfileView_Previews: PreviewProvider {
 
     static var previews: some View {
         ProfileView()
-            .environmentObject(AuthViewModel())
+            .environmentObject(AuthViewModel(configuration: LoginConfiguration(googleClientID: "preview-client-id")))
     }
 }
