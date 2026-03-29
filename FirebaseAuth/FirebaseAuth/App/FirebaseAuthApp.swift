@@ -18,8 +18,8 @@ struct FirebaseAuthApp: App {
     init() {
         FirebaseApp.configure()
 
-        guard let googleClientID = FirebaseApp.app()?.options.clientID ?? Bundle.value(for: .googleClientID) else {
-            fatalError("Missing Google Client ID in Firebase configuration or Info.plist")
+        guard let googleClientID = FirebaseApp.app()?.options.clientID else {
+            fatalError("Missing Google Client ID — ensure GoogleService-Info.plist is present")
         }
         let firebaseApiKey = FirebaseApp.app()?.options.apiKey
         let googleReversedClientID = Bundle.value(for: .googleReversedClientID)
