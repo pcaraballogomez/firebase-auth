@@ -131,7 +131,11 @@ private extension AuthViewModel {
         guard let idToken = signInResult.user.idToken?.tokenString else {
             throw URLError(.badServerResponse)
         }
-        return (idToken, signInResult.user.accessToken.tokenString)
+        let accessToken = signInResult.user.accessToken.tokenString
+        guard !accessToken.isEmpty else {
+            throw URLError(.badServerResponse)
+        }
+        return (idToken, accessToken)
     }
 }
 
