@@ -10,6 +10,7 @@ import SwiftUI
 public struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var emailErrorMessage: String?
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
     @Environment(\.authViewModel) private var viewModel: (any AuthViewModelProtocol)
@@ -41,8 +42,10 @@ public struct LoginView: View {
             InputView(text: $email,
                       title: LocalResources.Strings.Login.email.capitalized,
                       placeholder: LocalResources.Strings.Login.emailPlaceholder,
+                      errorMessage: emailErrorMessage,
                       textContentType: .username,
-                      keyboardType: .emailAddress)
+                      keyboardType: .emailAddress,
+                      endEditingAction: validateEmail)
 
             InputView(text: $password,
                       title: LocalResources.Strings.Login.password,
@@ -106,6 +109,14 @@ public struct LoginView: View {
         errorMessage = message
         showErrorAlert = true
     }
+
+    private func validateEmail() {
+        guard case let .failure(error) = Validator.validateEmail(email) else {
+            emailErrorMessage = nil
+            return
+        }
+        emailErrorMessage = error.errorDescription
+    }
 }
 
 // MARK: - AuthenticationFormProtocol
@@ -113,7 +124,9 @@ public struct LoginView: View {
 extension LoginView: AuthenticationFormProtocol {
 
     var formIsValid: Bool {
-        !email.isEmpty && !password.isEmpty
+        guard !password.isEmpty,
+              case .success = Validator.validateEmail(email) else { return false }
+        return true
     }
 }
 
