@@ -83,7 +83,9 @@ private extension AuthViewModel {
         guard let userId else { return }
 
         currentUser = try? await userPersistencyService.fetchUser(withId: userId)
+        #if DEBUG
         print("DEBUG: Current user is \(String(describing: currentUser))")
+        #endif
     }
 
     func handleUserSession(result: AuthDataResult) async throws {
@@ -105,7 +107,7 @@ private extension AuthViewModel {
             try await userPersistencyService.createUser(user)
             currentUser = user
         } catch {
-            print("DEBUG: Error - failed to create user document: \(error)")
+            assertionFailure("Failed to create user document: \(error)")
         }
     }
 

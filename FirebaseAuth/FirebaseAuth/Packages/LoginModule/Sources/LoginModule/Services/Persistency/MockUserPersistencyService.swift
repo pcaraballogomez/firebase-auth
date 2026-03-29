@@ -14,10 +14,14 @@ class MockUserPersistencyService: UserPersistencyServiceProtocol {
     }
 
     func createUser(_ user: User) async throws {
+        #if DEBUG
         print("Mock createUser")
+        #endif
     }
 
     func deleteUser(withId id: String) async throws {
+        #if DEBUG
         print("Mock deleteUser")
+        #endif
     }
 }
